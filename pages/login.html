@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+     <!-- google font Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- iconfont -->
+    <link rel="stylesheet" href="../icon/font_5133841_4ao6qal2s5d/iconfont.css">
+    <!-- local css -->
+     <link rel="stylesheet" href="../css/ying-login.css">
+</head>
+<body>
+    <!-- @author    : ying,
+         @date      : 3/5/2026,
+         @description: login and sign up -->
+     <!-- <video src="video/12612854_1920_1080_30fps.mp4" autoplay loop muted></video> -->
+    <div class="container">
+        <!-- login -->
+        <div class="login">
+            <h2>Login</h2>
+            <form action="#" autocomplete="off" class="login-form">
+                <div class="form-input">
+                    <input type="email" required  placeholder="" id="login-email">
+                    <label >Email</label>
+                    <span class="iconfont icon-email"></span>
+                </div>
+
+                <div class="form-input">
+                    <input type="password" required placeholder="" id="login-password">
+                    <label >Password</label>
+                    <span class="iconfont icon-password"></span>
+                </div>
+
+                <div class="remember-forget">
+                    <label><input type="checkbox" class="check-password">Check Password</label>
+                    <a href="#" class="Forgot-Password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+                <div class="bottom-register-p">
+                    <p>Don't have a account?<a href="#" class="register-link">Register</a></p>
+                </div>
+        </div>
+
+
+        <!-- register -->
+         <div class="register">
+            <h2>Sign Up</h2>
+            <form action="#" autocomplete="off" class="register-form">
+                <div class="form-input">
+                    <input type="text" required maxlength="10" name="username" placeholder="">
+                    <label >Username</label>
+                    <span class="iconfont icon-user2"></span>
+                    <small class="username-limit"></small>
+                </div>
+
+                <div class="form-input">
+                    <input type="email" required placeholder="" id="register-email">
+                    <label >Email</label>
+                    <span class="iconfont icon-email"></span>
+                </div>
+
+                <div class="form-input">
+                    <input type="password" required placeholder="" id="register-password">
+                    <label >Password</label>
+                    <button class="icon-btn" type="button"><span class="iconfont icon-eyeclose-fill"></span></button>
+                </div>
+
+                <div class="terms">
+                    <label><input type="checkbox" required class="conditions">I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="register-btn">Create an account</button>
+            </form>
+                <div class="bottom-login-p">
+                    <p>Already have an account?<a href="#" class="login-link"> Log in</a></p>
+                </div>
+        </div>
+        <!-- reset password -->
+        <div class="reset-password">
+            <h2>Reset Password</h2>
+            <form action="#" autocomplete="off" class="reset-form">
+                <div class="form-input">
+                    <input type="email" required placeholder="" class="reset-email">
+                    <label >Email</label>
+                    <span class="iconfont icon-email"></span>
+                </div>
+
+                <div class="form-input">
+                    <input type="text" required placeholder="" autocomplete="new-password" class="new-password">
+                    <label >New Password</label>
+                    <span class="iconfont icon-password"></span>
+                </div>
+                <button type="submit" class="reset-btn">Confirm</button>
+            </form>
+            <div class="backlogin"><a href="#" class="backloginLink">Back to login</a></div>
+            
+        </div>
+    </div>
+    
+
+
+
+
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- login.js -->
+    <script src="../js/login.js"></script>
+</body>
+</html>

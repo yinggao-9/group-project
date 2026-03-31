@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+/* navbar */
+.navbar{
+    height: 80px;
+    background-color: #2b343c !important;
+} 
+.nav{
+    margin-right: 50px;
+}
+.nav li, .nav a{
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+.nav li{
+    margin: 0 20px;
+}
+.logo-text{
+    /* position: fixed;
+    top:100px;
+    left:200px; */
+    font-family: "Great Vibes";
+    color: #ffffff;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: 400;
+    z-index: 5;
+}
+
+/* logo img */
+.logo-img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: 4; 
+    transform: translateY(-30px);
+    transition: transform .6s;  
+}
+.logo-img:hover{
+    transform: translateY(-30px) rotateY(-180deg); 
+}
+
+
+ /* the movement effect of navbar menu  */
+.nav-double-link{
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.nav-double-link.active , .nav-offcanvas-link.active{
+    font-weight: 800;
+    border-bottom: 1.5px solid aquamarine;
+}
+.nav-double-link span{
+    transition: transform .4s;
+}
+.nav-double-link span:nth-child(2){
+    position: absolute;
+    transform: translateY(200%);
+}
+
+.nav-double-link:hover span:nth-child(1){
+    transform: translateY(-200%);
+}
+.nav-double-link:hover span:nth-child(2){
+     transform: translateY(0);
+     color: aquamarine;
+}
+
+/* navbar btn */
+.nav-item .sign-btn{
+    border-radius: 20px;
+}
+
+
+/* offcanvas */
+/* navbar-toggler btn  .offcanvas-body, .navbar-nav ,*/
+.offcanvas-body, .navbar-nav{
+    padding: 0;
+}
+.navbar-toggler{
+    background-color: #ffffff !important;
+}
+.sign-offcanvas-btn{
+    width: 100%;
+}
+.offcanvas-title{
+    font-family: "Great Vibes";
+    text-align: center;
+    width: 100%;
+    font-weight: bolder;
+    color: #f3c548;
+    letter-spacing: 3px;
+    font-size: 1.5rem;
+}
+.nav-offcanvas-item{
+  margin: 20px 0;
+}
+.nav-offcanvas-link{
+    color: #2b343c;
+   font-size: larger;
+}
+.nav-offcanvas-link:hover{
+   border-bottom: 1.5px solid aquamarine;
+}
+.sign-offcanvas-btn{
+    border-radius: 20px;
+    border: none;
+    font-size: large;
+}
+.offcanvas .btn-close:focus{
+    box-shadow: none;
+}
+@media screen and (max-width: 1200px) {
+.logo-img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: 4; 
+    transform: translateY(0px);
+    transition: transform .6s;  
+}
+.logo-text{
+    display: none;
+}
+    
+}

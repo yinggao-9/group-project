@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式酒店搜索 · Bootstrap + Flatpickr</title>
+    <!-- Bootstrap 5 CSS (用于布局与组件) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (清爽图标) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Flatpickr 日历样式 (现代轻盈) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- 可选: Flatpickr 主题 (使用默认即可) -->
+    
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 16px;
+        }
+        
+        .booking-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1100px;
+        }
+        
+        /* 每个选项条目的基础样式 */
+        .booking-item {
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-right: 1px solid #e9e9e9;
+            height: 100%;
+        }
+        
+        .booking-item:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* 移除最后一个右边框 */
+        .booking-item:last-child {
+            border-right: none;
+        }
+        
+        /* 标签文字 */
+        .item-label {
+            font-size: 12px;
+            color: #6c757d;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            font-weight: 500;
+        }
+        
+        /* 数值大字 */
+        .item-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #212529;
+            line-height: 1.3;
+        }
+        
+        /* Bootstrap 图标调整 */
+        .bi {
+            font-size: 1.5rem;
+            color: #495057;
+        }
+        
+        /* 隐藏真正的input (flatpickr 绑定用) */
+        .hidden-input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+        }
+        
+        /* ----- 自定义房间人数下拉 (风格与flatpickr协调) ----- */
+        .guest-dropdown {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 1050;
+            backdrop-filter: blur(2px);
+            display: none;
+        }
+        
+        .guest-menu {
+            position: absolute;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            width: 360px;
+            max-width: calc(100vw - 40px);
+            padding: 24px;
+            z-index: 1051;
+            animation: fadeScale 0.15s ease;
+        }
+        
+        @keyframes fadeScale {
+            from { opacity: 0.6; transform: scale(0.96); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .guest-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .guest-item:last-child {
+            border-bottom: none;
+        }
+        
+        .counter {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .counter-btn {
+            width: 38px;
+            height: 38px;
+            border: 1px solid #dee2e6;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #212529;
+            transition: all 0.15s;
+        }
+        
+        .counter-btn:hover:not(:disabled) {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .counter-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        /* 响应式调整：小屏去除右边框，加下边框形成竖排感 */
+        @media (max-width: 768px) {
+            .booking-item {
+                border-right: none;
+                border-bottom: 1px solid #e9e9e9;
+            }
+            .booking-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="booking-card">
+        <!-- Bootstrap 栅格：一行五列，自动堆叠 -->
+        <div class="row g-0">
+            <!-- 入住 -->
+            <div class="col-12 col-md" id="arrivalTrigger">
+                <div class="booking-item">
+                    <i class="bi bi-calendar3"></i>
+                    <div class="flex-grow-1">
+                        <div class="item-label">Arrival</div>
+                        <div class="item-value" id="arrivalDisplay">09/03/2026</div>
+                    </div>
+                    <!-- flatpickr 绑定的隐藏输入 -->
+                    <input type="text" id="arrivalPicker" class="hidden-input">
+                </div>
+            </div>
+            
+            <!-- 退房 -->
+            <div class="col-12 col-md" id="departureTrigger">
+                <div class="booking-item">
+                    <i class="bi bi-calendar3"></i>
+                    <div class="flex-grow-1">
+                        <div class="item-label">Departure</div>
+                        <div class="item-value" id="departureDisplay">10/03/2026</div>
+                    </div>
+                    <input type="text" id="departurePicker" class="hidden-input">
+                </div>
+            </div>
+            
+            <!-- 房间数 -->
+            <div class="col-12 col-md" id="roomsTrigger">
+                <div class="booking-item">
+                    <i class="bi bi-door-open"></i>
+                    <div class="flex-grow-1">
+                        <div class="item-label">Rooms</div>
+                        <div class="item-value" id="roomsDisplay">1</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 成人 -->
+            <div class="col-12 col-md" id="adultsTrigger">
+                <div class="booking-item">
+                    <i class="bi bi-person"></i>
+                    <div class="flex-grow-1">
+                        <div class="item-label">Adults</div>
+                        <div class="item-value" id="adultsDisplay">2</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 儿童 -->
+            <div class="col-12 col-md" id="childrenTrigger">
+                <div class="booking-item">
+                    <i class="bi bi-person-heart"></i>
+                    <div class="flex-grow-1">
+                        <div class="item-label">Children</div>
+                        <div class="item-value" id="childrenDisplay">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 房间人数下拉菜单 (完全保留原逻辑) -->
+    <div class="guest-dropdown" id="guestDropdown">
+        <div class="guest-menu" id="guestMenu">
+            <h6 class="mb-3 fw-bold">Select guests</h6>
+            <div class="guest-item">
+                <span>Rooms</span>
+                <div class="counter">
+                    <button class="counter-btn" id="roomsMinus" type="button">−</button>
+                    <span id="roomsCount" style="min-width:30px; text-align:center;">1</span>
+                    <button class="counter-btn" id="roomsPlus" type="button">+</button>
+                </div>
+            </div>
+            <div class="guest-item">
+                <span>Adults</span>
+                <div class="counter">
+                    <button class="counter-btn" id="adultsMinus" type="button">−</button>
+                    <span id="adultsCount" style="min-width:30px; text-align:center;">2</span>
+                    <button class="counter-btn" id="adultsPlus" type="button">+</button>
+                </div>
+            </div>
+            <div class="guest-item">
+                <span>Children (0-17)</span>
+                <div class="counter">
+                    <button class="counter-btn" id="childrenMinus" type="button">−</button>
+                    <span id="childrenCount" style="min-width:30px; text-align:center;">0</span>
+                    <button class="counter-btn" id="childrenPlus" type="button">+</button>
+                </div>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+                <button class="btn btn-outline-secondary flex-grow-1" id="cancelGuest">Cancel</button>
+                <button class="btn btn-primary flex-grow-1" id="doneGuest">Done</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 脚本：jQuery (仅用于Bootstrap组件，但flatpickr不依赖jQuery) + Bootstrap + flatpickr -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- flatpickr 核心库 -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // ========== 使用 flatpickr 日期选择器 (现代美观) ==========
+            
+            // 入住日期 flatpickr
+            const arrivalPicker = flatpickr("#arrivalPicker", {
+                dateFormat: "d/m/Y",
+                defaultDate: "09/03/2026",
+                minDate: "today",
+                onChange: function(selectedDates, dateStr, instance) {
+                    document.getElementById('arrivalDisplay').innerText = dateStr;
+                    // 自动将退房日期设为入住后一天 (如果有选中日期)
+                    if (selectedDates[0]) {
+                        const nextDay = new Date(selectedDates[0]);
+                        nextDay.setDate(nextDay.getDate() + 1);
+                        departurePicker.setDate(nextDay, true); // true 表示触发 onChange
+                    }
+                }
+            });
+            
+            // 退房日期 flatpickr
+            const departurePicker = flatpickr("#departurePicker", {
+                dateFormat: "d/m/Y",
+                defaultDate: "10/03/2026",
+                minDate: "today",
+                onChange: function(selectedDates, dateStr, instance) {
+                    document.getElementById('departureDisplay').innerText = dateStr;
+                }
+            });
+            
+            // 点击入住区域触发日历
+            $('#arrivalTrigger').on('click', function(e) {
+                arrivalPicker.open();
+            });
+            
+            // 点击退房区域触发日历
+            $('#departureTrigger').on('click', function(e) {
+                departurePicker.open();
+            });
+            
+            // ========== 房间人数逻辑 (保持不变，与之前完全一致) ==========
+            const roomsDisplay = document.getElementById('roomsDisplay');
+            const adultsDisplay = document.getElementById('adultsDisplay');
+            const childrenDisplay = document.getElementById('childrenDisplay');
+            
+            const roomsCount = document.getElementById('roomsCount');
+            const adultsCount = document.getElementById('adultsCount');
+            const childrenCount = document.getElementById('childrenCount');
+            
+            const roomsMinus = document.getElementById('roomsMinus');
+            const roomsPlus = document.getElementById('roomsPlus');
+            const adultsMinus = document.getElementById('adultsMinus');
+            const adultsPlus = document.getElementById('adultsPlus');
+            const childrenMinus = document.getElementById('childrenMinus');
+            const childrenPlus = document.getElementById('childrenPlus');
+            
+            const guestDropdown = document.getElementById('guestDropdown');
+            const guestMenu = document.getElementById('guestMenu');
+            const cancelBtn = document.getElementById('cancelGuest');
+            const doneBtn = document.getElementById('doneGuest');
+            
+            let rooms = 1;
+            let adults = 2;
+            let children = 0;
+            
+            function syncFromDisplay() {
+                rooms = parseInt(roomsDisplay.innerText) || 1;
+                adults = parseInt(adultsDisplay.innerText) || 2;
+                children = parseInt(childrenDisplay.innerText) || 0;
+                updateCounterDisplay();
+            }
+            
+            function updateCounterDisplay() {
+                roomsCount.innerText = rooms;
+                adultsCount.innerText = adults;
+                childrenCount.innerText = children;
+            }
+            
+            function updateMainDisplay() {
+                roomsDisplay.innerText = rooms;
+                adultsDisplay.innerText = adults;
+                childrenDisplay.innerText = children;
+            }
+            
+            function openGuestMenu(triggerEl) {
+                const rect = triggerEl.getBoundingClientRect();
+                let top = rect.bottom + window.scrollY + 8;
+                let left = rect.left + window.scrollX;
+                
+                const menuWidth = 360;
+                const winWidth = window.innerWidth;
+                if (left + menuWidth > winWidth - 16) {
+                    left = winWidth - menuWidth - 16;
+                }
+                if (left < 16) left = 16;
+                
+                guestMenu.style.top = top + 'px';
+                guestMenu.style.left = left + 'px';
+                guestDropdown.style.display = 'block';
+            }
+            
+            function closeGuestMenu(save = true) {
+                guestDropdown.style.display = 'none';
+                if (save) {
+                    updateMainDisplay();
+                } else {
+                    syncFromDisplay();
+                }
+            }
+            
+            document.getElementById('roomsTrigger').addEventListener('click', function(e) {
+                syncFromDisplay();
+                openGuestMenu(this);
+            });
+            
+            document.getElementById('adultsTrigger').addEventListener('click', function(e) {
+                syncFromDisplay();
+                openGuestMenu(this);
+            });
+            
+            document.getElementById('childrenTrigger').addEventListener('click', function(e) {
+                syncFromDisplay();
+                openGuestMenu(this);
+            });
+            
+            roomsMinus.addEventListener('click', () => { if (rooms > 1) rooms--; updateCounterDisplay(); });
+            roomsPlus.addEventListener('click', () => { if (rooms < 10) rooms++; updateCounterDisplay(); });
+            adultsMinus.addEventListener('click', () => { if (adults > 1) adults--; updateCounterDisplay(); });
+            adultsPlus.addEventListener('click', () => { if (adults < 10) adults++; updateCounterDisplay(); });
+            childrenMinus.addEventListener('click', () => { if (children > 0) children--; updateCounterDisplay(); });
+            childrenPlus.addEventListener('click', () => { if (children < 10) children++; updateCounterDisplay(); });
+            
+            cancelBtn.addEventListener('click', () => closeGuestMenu(false));
+            doneBtn.addEventListener('click', () => closeGuestMenu(true));
+            
+            guestDropdown.addEventListener('click', function(e) {
+                if (e.target === guestDropdown) closeGuestMenu(false);
+            });
+            
+            // 初始化显示
+            updateMainDisplay();
+            updateCounterDisplay();
+        });
+    </script>
+</body>
+</html>

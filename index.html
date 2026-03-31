@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+     <!-- animate.css -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- flatpickr calendar css -->
+     <link rel="stylesheet" href="css/flatpickr.min.css">
+    <!-- logo favicon -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <!-- icon -->
+     <link rel="stylesheet" href="icon/font_5133841_yoi6izyebpl/iconfont.css">
+    <!-- google font Roboto,Great Vibes  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- local css -->
+    <link rel="stylesheet" href="css/ying-index.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand logo-link" href="index.html"><img src="img/logo.png" alt="logo" class="logo-img"></a>
+        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <ul class="nav align-items-center gap-5 d-none d-lg-flex">
+            <li class="nav-item">
+                <a class="nav-double-link active" aria-current="page" href="#">
+                    <span>Hotel</span>
+                    <span>Hotel</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="pages/about.html">
+                    <span>About us</span>
+                    <span>About us</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="pages/rooms.html">
+                    <span>Rooms</span>
+                    <span>Rooms</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <div class="username"></div> 
+            </li>
+            <li class="nav-item d-none MyAccount">
+                <a class="nav-double-link" href="#">
+                    <span>MyAccount</span>
+                    <span>MyAccount</span>
+                </a>
+            </li>
+            <li class="nav-item login-li">
+                <a class="nav-link" href="pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-item d-none loginout-li">
+                <a class="nav-link" href="#"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+
+
+    <!-- navbar-toggler -->
+    <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header mt-3">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Adlon Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link active" aria-current="page" href="#">Hotel</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="pages/about.html">About us</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="pages/rooms.html">Rooms</a>
+            </li>
+            <li class="nav-offcanvas-item MyAccount d-none">
+                <a class="nav-offcanvas-link" href="#">MyAccount</a> 
+            </li>
+            <li class="nav-offcanvas-item login-li">
+                <a class="nav-offcanvas-link" href="pages/login.html"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-offcanvas-item loginout-li d-none">
+                <a class="nav-offcanvas-link" href="#"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <!-- end navbar -->
+    
+    <!-- hero section -->
+     <div class="hero-section d-flex flex-column justify-content-center align-items-center gap-3 text-center">
+        <h1 class="title animate__animated animate__slideInDown d-none d-sm-flex">Welcome to <span>Adlon</span> Hotel</h1>
+        <h1 class="title d-sm-none"><span>Adlon</span> Hotel</h1>
+        <div class="location animate__animated animate__fadeIn"><span class="iconfont icon-location me-1"></span>Hello Street, Dublin 1, Ireland </div>
+    </div>
+
+    <!-- search section -->
+     <div class="search-section">
+     <div class="search-box ">
+        <div class="row">
+            
+            <!-- check-in date -->
+            <div class="col-12 col-md first-col" id="check-in">
+                <div class="search-item">
+                    <span class="iconfont icon-date-range"></span>
+                    <div class="content">
+                        <label>Arrival</label>
+                        <div class="value"></div>
+                    </div>
+                    <input type="text" id="checkin-input">
+                </div>
+            </div>
+
+            <!-- check-out date -->
+            <div class="col-12 col-md" id="check-out">
+                <div class="search-item">
+                    <span class="iconfont icon-date-range"></span>
+                    <div class="content">
+                        <label>Departure</label>
+                        <div class="value"></div>
+                    </div>
+                    <input type="text" id="checkout-input">
+                </div>
+            </div>
+
+            <!-- the number of rooms -->
+            <div class="col-12 col-md" id="rooms" data-bs-toggle="dropdown">
+                <div class="search-item">
+                    <span class="iconfont icon-Bed"></span>
+                    <div class="content">
+                        <label>Rooms</label>
+                        <div class="value">1</div>
+                    </div>
+                </div>
+            </div>
+            <!-- rooms dropdown menu -->
+            <div class="dropdown-menu" id="rooms-menu">
+                <h6>Select rooms</h6>
+                <div class="room-card">
+                    <span>rooms</span>
+                    <div class="counter">
+                        <button class="count-btn room-minus">—</button>
+                        <span class="inner-room-number">1</span>
+                        <button class="count-btn room-plus">+</button>
+                    </div>
+                </div>
+                <span class="error float-end"></span>
+                <button class="select-btn rooms-btn">Select</button>
+            </div>
+
+            <!-- the number of guests -->
+            <div class="col-12 col-md" id="guests" data-bs-toggle="dropdown">
+                <div class="search-item">
+                    <span class="iconfont icon-icons-"></span>
+                    <div class="content">
+                        <label>Guests</label>
+                        <div class="value">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- guests dropdown menu -->
+            <div class="dropdown-menu" id="guests-menu">
+                <h6>Select guests</h6>
+                <div class="guest-card d-flex flex-column">
+                    <div class="adult d-flex justify-content-between gap-2 mb-3">
+                        <span>adults</span>
+                        <div class="counter-adult">
+                            <button class="count-btn adult-plus">+</button>
+                            <span class="adult-num">1</span>
+                            <button class="count-btn adult-minus">—</button>
+                        </div>
+                    </div>
+
+                    <div class="children d-flex justify-content-between gap-2">
+                        <span>children</span>
+                        <div class="counter-child ">
+                            <button class="count-btn child-plus">+</button>
+                            <span class="child-num">1</span>
+                            <button class="count-btn child-minus">—</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="error-adult"></span>
+                    <span class="error-child"></span>
+                </div>
+                <button class="select-btn guests-btn">Select</button>
+            </div>
+            <!-- serach button -->
+             <div class="col-12 col-md last-col">
+                <div class="search-item">
+                    <button class="search-btn">serach</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+    <!-- end search section -->
+
+    <!-- brand story section -->
+     <div class="brand-story" id="ourStory">
+        <h3 class="mb-4 ms-4 mt-4">Our Story</h3>
+            <div class="container p-0">
+                <div class="content">
+                    <div class="row row-cols-1 row-cols-md-2 g-5">
+                        <div class="col">
+                            <div class="img"><img src="img/brand-story/cover.jpg" alt="cover"></div>
+                        </div>
+                        <div class="col">
+                            <div class="text" id="story">
+                                <em><h5>About Us</h5></em>
+                                <p>In 1980, three visionary founders—<strong>Evelyn Lizeth, Joseph Munene Mbogori, and Ying Gao</strong>—came together in Ireland to establish Adlon Hotel. Their vision was simple yet profound: <em class="text-danger">to create a unique space where guests could experience both the warmth and comfort of home, alongside exceptional professional service</em>.</p>
+                                <p>For over four decades, We have received numerous industry accolades—from "Best Global Boutique Hotel" to "Excellence in Service Award"—but what we treasure most is the genuine praise we've earned from guests around the world. Countless travelers have found a "home away from home" within our walls, and have carried our story to every corner of the globe.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="text-2 mt-5">
+                                <em><h5>From 3 to 72—and growing with heart.</h5></em>
+                                <p>Our journey began with three founders. Today, our Adlon family includes 72 dedicated professionals. But what truly sets us apart is not our size—it's the sincerity, passion, and excellence that every team member brings. We remain committed to delivering nothing less than the finest service, ensuring every guest feels the warmth of our care.</p>
+                                <a href="#"><button class="btn btn-outline-success mt-4 w-25">Know More</button></a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="img-2">
+                                <img src="/img/brand-story/people.jpg" alt="people">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- end brand story section -->
+    <!-- club section -->
+        <div class="club-section mt-4">
+        <h3 class="mb-4 ms-4" id="joinUs">Join Us</h3>
+        <div class="container">
+        <div class="wrapper">
+                <div class="col-12 col-md-6 d-none d-md-block">
+                    <div class="discount-part">
+                        <h5 class="mb-4">Join Us for Exclusive Offers</h5>
+                        <div class="row row-cols-3 g-5 ">
+                            <div class="col">
+                                <span class="iconfont icon-discount"></span>
+                                <span class="text">10% discount on booking rooms</span>
+                            </div>
+                            <div class="col">
+                                <span class="iconfont icon-Relaxation"></span>
+                                <span class="text">15% discount on drinks</span>
+                            </div>
+                            <div class="col">
+                                <span class="iconfont icon-luggagestorage"></span>
+                                <span class="text">free luggage storage</span>
+                            </div>
+                            <div class="col">
+                                <span class="iconfont icon-airportservice"></span>
+                                <span class="text">free airport service</span>
+                            </div>
+                            <div class="col">
+                                <span class="iconfont icon-room_upgrade"></span>
+                                <span class="text">free room upgrade</span>
+                            </div>
+                            <div class="col">
+                                <span class="iconfont icon-mianfeiWIFI"></span>
+                                <span class="text">free Wi-Fi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 sign-col"> 
+                    <h5 class="sign-title mb-5">Don't miss out</h5>
+                    <div class="mt-5 mb-5">
+                    <p>Subscribe to our newsletter</p>
+                    <p>get our special offers and discounts immediately</p>
+                    </div> 
+                    <a href="pages/login.html"><button class="btn btn-danger ms-2 w-50">JOIN US</button></a>
+                </div>
+            </div>  
+        </div>
+    </div>
+    <!-- end club section -->
+    <!-- carousel section -->
+    <div class="carousel-section">
+        <div class="section-header d-flex justify-content-between mb-2 align-items-center">
+            <h2 class="header-title ms-4">Best Seller</h2>
+            <div class="btns">
+            <button class="arrow-left btn btn-outline-secondary iconfont icon-circle-left"></button>
+            <button class="arrow-right btn btn-outline-secondary iconfont icon-circle-right me-3"></button>
+            </div>
+        </div>
+        <div class="section-body">
+            <!-- left & right truck arrows -->
+            <div class="track-container">
+                <ul class="products"></ul>
+                    <!-- modal-card part -->
+                    <div class="modal-overlay">
+                    <div class="modal-card"> 
+                        <div class="container-fluid p-0">
+                        <div class="room-card-content">
+                        <div class="room-card-header">
+                            <button type="button" class="close-btn2 float-end"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-x1"></use></svg></button>
+                        </div>
+                        <div class="room-card-body">
+                            <div class="row g-0 h-100"> 
+                                <!-- carousel images -->
+                                <div class="col-lg-8 img-col col-12">
+                                <div id="carouselimages" class="carousel slide">
+                                    <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselimages" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#carouselimages" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#carouselimages" data-bs-slide-to="2"></button>
+                                    </div>
+                                    <div class="carousel-inner carousel-imgs"></div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselimages" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselimages" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                    </button>
+                                </div>
+                                </div> 
+                                <!-- text -->
+                                <div class="col-lg-4 text-col p-3 col-12">
+                                    <div class="text-content"></div>
+                                    <button class="btn btn-danger mt-4 w-75 d-block mx-auto">Book Now</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+
+    <!-- end bestseller section -->
+
+    <!-- fixed sidebar -->
+     <div class="fixed-sidebar">
+        <div class="sidebar-menu">
+            <ul class="media-list d-none">
+                <li class="media-item">
+                    <svg class="icon media-icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                    <span class="social-text">adlon hotel@instagram</span>
+                </li>
+                <li class="media-item">
+                    <svg class="icon media-icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                    <span class="social-text">adlon hotel@facebook</span>
+                </li>
+                <li class="media-item">
+                    <svg class="icon media-icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                    <span class="social-text">adlon hotel@youtube</span>
+                </li>
+                <li class="media-item">
+                    <svg class="icon media-icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                    <span class="social-text">adlon hotel@tiktok</span>  
+                </li>
+                <li class="media-item">
+                    <svg class="icon media-icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                    <span class="social-text">adlon hotel@linkedin</span>
+                </li>
+            </ul>
+        </div>
+
+        
+        <!-- close btn -->
+         <div class="btn-wrapper">
+            <button type="button" class="close-btn"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-x1"></use></svg></button>
+            <!-- sidebar btn -->
+            <button class="btn btn-outline-dark fixed-btn" type="button">
+            <span class="iconfont icon-message"></span>
+            </button>
+        </div>
+     </div>
+    <!-- end fixed sidebar --> 
+    <!-- FAQ section -->
+     <div class="FAQ-section">
+        <div id="FAQ"><h2>FAQ</h2></div>
+        <div class="container p-5">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-5">
+                <div class="col">
+                    <div class="Time">
+                        <h5>Time</h5>
+                        <p><span class="iconfont icon-express-check-in-check-out"></span>check-in: 3:00 pm</p>
+                        <p><span class="iconfont icon-nav_check-out"></span>check-out: 11:00 am</p>
+                        <p><span class="iconfont icon-service"></span>service: 9:00 am-20:00 pm</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="Meals">
+                        <h5>Meal</h5>
+                        <p><span class="iconfont icon-breakfast"></span>breakfast:7:00 am - 9:00 am</p>
+                        <p><span class="iconfont icon-dinner1"></span>lunch:11:00 am - 13:00 pm </p>
+                        <p><span class="iconfont icon-dinner"></span>dinner:18:00pm - 21:00 pm</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="Service" id="service">
+                        <h5>Service</h5>
+                        <p><span class="iconfont icon-luggagestorage"></span>Luggage storage</p>
+                        <p><span class="iconfont icon-airportservice"></span>Airport service</p>
+                        <p><span class="iconfont icon-laundry1"></span>Laundry service</p>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="others">
+                        <h5>Others</h5>
+                        <p><span class="iconfont icon-disabledfacilities"></span>Disabled-friendly hotel</p>
+                        <p><span class="iconfont icon-dog"></span>dog-friendly hotel</p>
+                        <p><span class="iconfont icon-fi-no-smoking"></span>Non-smoking hotel</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="contact">
+                        <h5 id="contact">Contact</h5>
+                        <p><span class="iconfont icon-phone2"></span>Phone: +353 1234567</p>
+                        <p><span class="iconfont icon-email"></span>Email:Adlon Hotel@com</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="location">
+                        <h5>Location</h5>
+                        <p><span class="iconfont icon-location"></span>Hello Street, Dublin 1, Ireland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+    <!-- end FAQ section -->
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container footer-container">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- about us -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#aboutUs" aria-expanded="false" aria-controls="aboutUs">About Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">About Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
+                        <li><a class="collapse-item" href="#story">Story</a></li>
+                        <li><a class="collapse-item" href="#ourStory">History</a></li>
+                        <li><a class="collapse-item" href="#service">Service</a></li>
+                    </ul>
+                </div>
+                <!-- Quick links -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#quickLinks" aria-expanded="false" aria-controls="quickLinks">Quick links</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Quick links</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
+                        <li><a class="collapse-item" href="pages/rooms.html">Rooms</a></li>
+                        <li><a class="collapse-item" href="pages/about.html">Brand</a></li>
+                        <li><a class="collapse-item" href="pages/login.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- Find Help -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#findHelp" aria-expanded="false" aria-controls="findHelp">Find Help</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Find Help</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
+                        <li><a class="collapse-item" href="#FAQ">FAQ</a></li>
+                        <li><a class="collapse-item" href="#policy">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="#policy">Cookie Policy </a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#contactUs" aria-expanded="false" aria-controls="contactUs">Contact Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Contact Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
+                        <li><a class="collapse-item" href="#contact"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="#contact"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="#contact"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- social media section -->
+        <!-- cut line 1-->
+        <hr class="cutline d-none d-sm-block">
+        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+                    <div class="media-wrapper">
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                            <span>adlon hotel@instgram</span>
+                        </div>
+                        <div class="media-btn">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                            <span>adlon hotel@facebook</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                            <span>adlon hotel@youtobe</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                            <span>adlon hotel@ticktok</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                            <span>adlon hotel@linkin</span>
+                        </div>
+                    </div>
+        </div>
+        <!-- cut line 2 -->
+        <hr class="cutline">
+        <!-- copyright -->
+        <div class="copyright">
+            <div class="text-center">
+            <p class="mb-0">&copy; 2026 Adlon Hotel</p>
+            <p>All rights reserved.</p>  
+            <p id="policy">Privacy Policy | Cookie Policy | Cookie Settings</p>
+            </div>
+        </div>       
+    </div>
+    
+    <!-- end footer -->
+    
+
+    <!-- bootstrap js -->
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <!-- iconfont js -->
+     <script src="icon/font_5133841_yoi6izyebpl/iconfont.js"></script>
+     <!-- flatpickr calendar js -->
+      <script src="js/flatpickr.min.js"></script>
+     <!-- login js -->
+      <script src="js/index.js"></script>
+      <!-- navbar js -->
+    <script src="js/navbar.js"></script>
+    
+</body>
+</html>

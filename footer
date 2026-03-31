@@ -1,0 +1,94 @@
+ <!-- footer -->
+    <div class="footer">
+        <div class="container footer-container">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- about us -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#aboutUs" aria-expanded="false" aria-controls="aboutUs">About Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">About Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
+                        <li><a class="collapse-item" href="#">Story</a></li>
+                        <li><a class="collapse-item" href="#">History</a></li>
+                        <li><a class="collapse-item" href="#">Service</a></li>
+                    </ul>
+                </div>
+                <!-- Quick links -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#quickLinks" aria-expanded="false" aria-controls="quickLinks">Quick links</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Quick links</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
+                        <li><a class="collapse-item" href="#">Rooms</a></li>
+                        <li><a class="collapse-item" href="#">Booking</a></li>
+                        <li><a class="collapse-item" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- Find Help -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#findHelp" aria-expanded="false" aria-controls="findHelp">Find Help</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Find Help</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
+                        <li><a class="collapse-item" href="#">FAQ</a></li>
+                        <li><a class="collapse-item" href="#">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="#">Cookie Policy </a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#contactUs" aria-expanded="false" aria-controls="contactUs">Contact Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Contact Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- social media section -->
+        <!-- cut line 1-->
+        <hr class="cutline d-none d-sm-block">
+        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+                    <div class="media-wrapper">
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                            <span>adlon hotel@instgram</span>
+                        </div>
+                        <div class="media-btn">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                            <span>adlon hotel@facebook</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                            <span>adlon hotel@youtobe</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                            <span>adlon hotel@ticktok</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                            <span>adlon hotel@linkin</span>
+                        </div>
+                    </div>
+        </div>
+        <!-- cut line 2 -->
+        <hr class="cutline">
+        <!-- copyright -->
+        <div class="copyright">
+            <div class="text-center">
+            <p class="mb-0">&copy; 2026 Adlon Hotel</p>
+            <p>All rights reserved.</p>  
+            <p>Privacy Policy | Cookie Policy | Cookie Settings</p>
+            </div>
+        </div>       
+    </div>
+    
+    <!-- end footer -->
