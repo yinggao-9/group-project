@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Booking | Adlon Hotel</title>
+				<!--Boostrap Css-->
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+				<!-- bootstrap css -->
+    			<link rel="stylesheet" href="../css/bootstrap.min.css">
+				<!-- google font Roboto -->
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+				<!-- iconfont -->
+				<link rel="stylesheet" href="../icon/font_5133841_4ao6qal2s5d/iconfont.css">
+				<!--Bootstrap for booking form-->
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.11/build/css/intlTelInput.css"> <!-- link to an external library to show all the countries ladas for mobile phone-->
+				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css"> <!-- link to bootstrap to show all the countries for the information address-->
+				<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"> <!-- links the webpage to an external CSS file for the AOS library (that adds animations when elements appear as the user scrolls down the page) --> 
+				<!--Local css-->
+				<link rel="stylesheet" href="../css/bookingstyle.css">
+				<link rel="stylesheet" href="../css/navbar.css">
+
+	</head>
+
+	<body>
+
+		 <!-- navbar -->
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand logo-link" href="index.html"><img src="../img/logo.png" alt="logo" class="logo-img"></a>
+        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <ul class="nav align-items-center gap-5 d-none d-lg-flex">
+            <li class="nav-item">
+                <a class="nav-double-link" aria-current="page" href="#">
+                    <span>Hotel</span>
+                    <span>Hotel</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="#">
+                    <span>About us</span>
+                    <span>About us</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="#">
+                    <span>Rooms</span>
+                    <span>Rooms</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link active" href="#">
+                    <span>Booking</span>
+                    <span>Booking</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <div class="username"></div> 
+            </li>
+            <li class="nav-item d-none MyAccount">
+                <a class="nav-double-link" href="#">
+                    <span>MyAccount</span>
+                    <span>MyAccount</span>
+                </a>
+            </li>
+            <li class="nav-item login-li">
+                <a class="nav-link" href="pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-item d-none loginout-li">
+                <a class="nav-link" href="#"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+
+
+    <!-- navbar-toggler -->
+    <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header mt-3">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Adlon Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" aria-current="page" href="#">Hotel</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="#">About us</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="#">Rooms</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link active" href="#">Booking</a>
+            </li>
+            <li class="nav-offcanvas-item MyAccount d-none">
+                <a class="nav-offcanvas-link" href="#">MyAccount</a> 
+            </li>
+            <li class="nav-offcanvas-item login-li">
+                <a class="nav-offcanvas-link" href="pages/login.html"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-offcanvas-item loginout-li d-none">
+                <a class="nav-offcanvas-link" href="#"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <!-- end navbar -->
+
+		
+			<!--PAYMENT BOOKING-->
+			<div class="container mt-5">
+			<h2>Complete your booking</h2>
+			<p>Need an accesible room? Scroll down to see the options.</p>
+			<p><a href="../pages/login.html">Sign in</a> for faster booking.</p> <!--"a href" click botton for "sign in"-->
+			
+			<div class="d-flex align-items-baseline gap-3">
+				<h3 class="mb-0">Guest Information</h3>
+				<small class="text-muted">All fields are required unless otherwise stated.</small>
+			</div>
+			
+			<form id="paymentForm" onsubmit="return validateForm()" class="mt-4"><!--"form id" creates a form with id.
+																		"onsubmit" Runs a JavaScript function 
+																		called "validateForm()" when the user submits the form. 
+																		"return" If "validateForm()" returns true, then the form
+																		submits but if it returns false, the form submission is stopped.-->
+
+			<div class="row mb-2"> <!--Put everything in the same row-->
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">First Name</label><!--"label" is to describe inputs fields; "form" connects the label to a form element
+															in this case the category filter; "form label" styles the label to match Bootstrap’s-->
+					<input type="text" id="firstName" class="form-control"><!--"input" is used to collect user data.-->
+					<small class="text-danger d-none" id="firstNameError">
+						First Name is required
+					</small>
+				</div>
+		
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">Last Name</label>
+					<input type="text" id="lastName" class="form-control">
+					<small class="text-danger d-none" id="lastNameError">
+					Last Name is required
+					</small>
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">Email</label>
+					<input type="email" id="email" class="form-control">
+					<small class="text-danger d-none" id="emailError">
+					Enter an email address in format: example@example.com
+					</small>
+				</div>
+				
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">Member Number</label>
+					<input type="text" id="memberNumber" class="form-control" placeholder="Optional"> <!--"placeholder" show a grey text in the input & dissapear
+																											when user starts to type-->
+				</div>
+			</div>
+
+			<div class="row mb-2">
+				<div class="col-md-6 col-lg-10">
+					<label for="phone" class="form-label">Mobile Phone</label>
+					<div class="phone-input-wrapper">
+					<input type="tel" id="phone" class="form-control" inputmode="numeric">
+					<small class="text-danger d-none" id="phoneError">
+					A valid phone number is required.
+					</small>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row mb-2">
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label" for="country">Country/Region</label>
+					<select id="country" class="form-select" data-live-search="true"></select> <!-- it will fill automacally with with "data live search" -->
+				</div>
+			</div>		
+
+			<div class="row mb-2"> 
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">Address Line 1</label>
+					<input type="text" id="address1" class="form-control">
+					<small class="text-danger d-none" id="address1Error">
+					Enter a valid address.
+					</small>
+				</div>
+		
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">Address Line 2</label>
+					<input type="text" id="address2" class="form-control" placeholder="Optional">
+				</div>
+			</div>			
+			
+			<div class="row mb-2"> 
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">City</label>
+					<input type="text" id="city" class="form-control">
+					<small class="text-danger d-none" id="cityError">
+					City is required.
+					</small>
+				</div>
+		
+				<div class="col-md-6 col-lg-5">
+					<label class="form-label">State/Province</label>
+					<input type="text" id="state" class="form-control">
+					<small class="text-danger d-none" id="stateError">
+					State is required.
+					</small>
+				</div>
+			</div>
+
+			<div class="row mb-2"> 
+				<div class="col-md-6 col-lg-3">
+					<label class="form-label">Postal Code</label>
+					<input type="text" id="postalCode" class="form-control">
+					<small class="text-danger d-none" id="postalCodeError">
+					Postal code is required.
+					</small>
+				</div>
+			</div>				
+			
+			<div class="row mb-2 mt-4">
+				<div class="d-flex align-items-baseline gap-3">
+					<h3 class="mb-0">Payment Information</h3>
+					<small class="text-muted">A valid form of payment must be presented at check in.</small>
+				</div>
+			</div>
+			
+			<div class="row mb-2 mt-3"> 
+				<div class="col-md-6 col-lg-4">
+					<label class="payment-option d-flex align-items-center p-2 border rounded cursor-pointer">
+					<input type="radio" name="paymentMethod" value="card" class="me-3" checked>
+					<span>Pay Using Credit/Debit Card</span>
+					</label>
+				</div>
+			</div>
+			
+			<div class="row mb-2 mt-2">
+				<div class="col-md-6 col-lg-4">
+					<label class="form-label">Credit / Debit Card Number</label>
+					<input type="text" id="card" class="form-control" inputmode="numeric" maxlength="16">
+					<small class="text-danger d-none" id="cardError">
+					Card number is required.
+					</small>
+				</div>
+		
+				<div class="col-md-6 col-lg-3">
+					<label class="form-label">Expiration Month</label>
+					<select id="expMonth" class="form-select">
+						<option value="">Month</option>
+						<option value="01">January</option>
+						<option value="02">February</option>
+						<option value="03">March</option>
+						<option value="04">April</option>
+						<option value="05">May</option>
+						<option value="06">June</option>
+						<option value="07">July</option>
+						<option value="08">August</option>
+						<option value="09">September</option>
+						<option value="10">October</option>
+						<option value="11">November</option>
+						<option value="12">December</option>
+					</select>
+					<small class="text-danger d-none" id="expMonthError">
+					A valid expiration month is required.
+					</small>
+				</div>
+				
+				<div class="col-md-6 col-lg-3">
+					<label class="form-label">Expiration Year</label>
+					<select id="expYear" class="form-select">
+						<option value="">Year</option>
+						<option value="2026">2026</option>
+						<option value="2027">2027</option>
+						<option value="2028">2028</option>
+						<option value="2029">2029</option>
+						<option value="2030">2030</option>
+						<option value="2031">2031</option>
+						<option value="2032">2032</option>
+						<option value="2033">2033</option>
+						<option value="2034">2034</option>
+						<option value="2035">2035</option>
+						<option value="2036">2036</option>
+					</select>
+					<small class="text-danger d-none" id="expYearError">
+					A valid expiration year is required.
+					</small>
+				</div>
+			</div>
+
+			
+			
+			<p id="error" class="error-message"></p>
+			<p id="success" class="success-message"></p>
+
+			<button type="submit" class="btn btn-custom">Book Now</button>
+			</form>
+			</div>
+			
+
+
+			 <!-- footer -->
+    <div class="footer">
+        <div class="container footer-container">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- about us -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#aboutUs" aria-expanded="false" aria-controls="aboutUs">About Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">About Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
+                        <li><a class="collapse-item" href="#">Story</a></li>
+                        <li><a class="collapse-item" href="#">History</a></li>
+                        <li><a class="collapse-item" href="#">Service</a></li>
+                    </ul>
+                </div>
+                <!-- Quick links -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#quickLinks" aria-expanded="false" aria-controls="quickLinks">Quick links</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Quick links</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
+                        <li><a class="collapse-item" href="#">Rooms</a></li>
+                        <li><a class="collapse-item" href="#">Booking</a></li>
+                        <li><a class="collapse-item" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- Find Help -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#findHelp" aria-expanded="false" aria-controls="findHelp">Find Help</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Find Help</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
+                        <li><a class="collapse-item" href="#">FAQ</a></li>
+                        <li><a class="collapse-item" href="#">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="#">Cookie Policy </a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#contactUs" aria-expanded="false" aria-controls="contactUs">Contact Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Contact Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- social media section -->
+        <!-- cut line 1-->
+        <hr class="cutline d-none d-sm-block">
+        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+                    <div class="media-wrapper">
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                            <span>adlon hotel@instgram</span>
+                        </div>
+                        <div class="media-btn">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                            <span>adlon hotel@facebook</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                            <span>adlon hotel@youtobe</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                            <span>adlon hotel@ticktok</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                            <span>adlon hotel@linkin</span>
+                        </div>
+                    </div>
+        </div>
+        <!-- cut line 2 -->
+        <hr class="cutline">
+        <!-- copyright -->
+        <div class="copyright">
+            <div class="text-center">
+            <p class="mb-0">&copy; 2026 Adlon Hotel</p>
+            <p>All rights reserved.</p>  
+            <p>Privacy Policy | Cookie Policy | Cookie Settings</p>
+            </div>
+        </div>       
+    </div>
+    
+    <!-- end footer -->
+
+			<script src="../js/bookingscript.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.11/build/js/intlTelInput.min.js"></script>
+			<script src="../icon/font_5133841_yoi6izyebpl/iconfont.js"></script>
+			<script src="../js/navbar.js"></script>
+
+
+	</body>
+</html>
