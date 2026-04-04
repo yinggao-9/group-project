@@ -34,21 +34,14 @@ a{
     font-size: 2rem;
     letter-spacing: 5px;
     font-weight: 400;
-    z-index: 5;
 }
 
 /* logo img */
 .logo-img{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 4; 
-    transform: translateY(-30px);
-    transition: transform .6s;  
+    height: 80px;
+    transform: translateY(-4px);
 }
-.logo-img:hover{
-    transform: translateY(-30px) rotateY(-180deg); 
-}
+
 
 
  /* the movement effect of navbar menu  */
@@ -111,9 +104,7 @@ a{
     color: #2b343c;
    font-size: larger;
 }
-.nav-offcanvas-link:hover{
-   border-bottom: 1.5px solid aquamarine;
-}
+
 .sign-offcanvas-btn{
     border-radius: 20px;
     border: none;
@@ -122,20 +113,7 @@ a{
 .offcanvas .btn-close:focus{
     box-shadow: none;
 }
-@media screen and (max-width: 1200px) {
-.logo-img{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 4; 
-    transform: translateY(0px);
-    transition: transform .6s;  
-}
-.logo-text{
-    display: none;
-}
-    
-}
+
 
 
 /* hero-section */
@@ -344,8 +322,8 @@ a{
     object-position: center;
     height: 400px;
     width: 100%;
-    border:4px solid rgb(172, 90, 31);
-    outline: 3px solid rgb(196, 38, 38);
+    border:2px solid rgb(149, 246, 197);
+    outline: 4px solid #f3c548;
 }
 .brand-story .content .text{
     font-size: 1.1rem;
@@ -414,7 +392,7 @@ a{
     margin:15px 10px;
     background: none;
     border: none;
-    color: red;
+    color: #e5c76c;
 }
 
 .book-btn{
@@ -601,6 +579,51 @@ a{
 }
 .media-item:hover .social-text {
     opacity: 1;         
+}
+
+/* review section */
+.review-section .track{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.comment {
+    position: absolute;
+    background: rgb(149, 246, 197);  
+    border-radius: 20px;
+    padding: 10px 15px;
+    width: 250px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    font-size: 14px;
+    animation: fly 20s linear forwards;
+    color: black;  
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+.comment .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.comment .text {
+    font-size: 13px;
+    white-space: normal;
+    word-wrap: break-word;
+    opacity: 0.9;
+}
+.comment-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    flex-shrink: 0;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 

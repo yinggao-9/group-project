@@ -164,9 +164,9 @@ const rooms = [
     {
         "id": 1,
         "title": "Standard Single Room",
-        "image1": "../img/roomtypes/1.jpg",
-        "image2": "../img/roomtypes/2.jpg",
-        "image3": "../img/roomtypes/3.jpg",
+        "image1": "img/roomtypes/1.jpg",
+        "image2": "img/roomtypes/2.jpg",
+        "image3": "img/roomtypes/3.jpg",
         "area": 18,
         "bed": "1 single",
         "adults": 1,
@@ -181,9 +181,9 @@ const rooms = [
     {
         "id": 2,
         "title": "Superior Single Room",
-        "image1": "../img/roomtypes/4.jpg",
-        "image2": "../img/roomtypes/5.jpg",
-        "image3": "../img/roomtypes/6.jpg",
+        "image1": "img/roomtypes/4.jpg",
+        "image2": "img/roomtypes/5.jpg",
+        "image3": "img/roomtypes/6.jpg",
         "area": 25,
         "bed": "1 single",
         "adults": 1,
@@ -198,9 +198,9 @@ const rooms = [
     {
         "id": 3,
         "title": "Superior Twin Room",
-        "image1": "../img/roomtypes/7.jpg",
-        "image2": "../img/roomtypes/8.jpg",
-        "image3": "../img/roomtypes/9.jpg",
+        "image1": "img/roomtypes/7.jpg",
+        "image2": "img/roomtypes/8.jpg",
+        "image3": "img/roomtypes/9.jpg",
         "area": 25,
         "bed": "2 twin",
         "adults": 2 ,
@@ -218,9 +218,9 @@ const rooms = [
     {
         "id": 4,
         "title": "Superior Double Room",
-        "image1": "../img/roomtypes/10.jpg",
-        "image2": "../img/roomtypes/11.jpg",
-        "image3": "../img/roomtypes/12.jpg",
+        "image1": "img/roomtypes/10.jpg",
+        "image2": "img/roomtypes/11.jpg",
+        "image3": "img/roomtypes/12.jpg",
         "area": 25,
         "bed": "1 king",
         "adults": 2 ,
@@ -238,9 +238,9 @@ const rooms = [
     {
     "id": 5,
     "title": "Deluxe Double Room",
-    "image1": "../img/roomtypes/13.jpg",
-    "image2": "../img/roomtypes/14.jpg",
-    "image3": "../img/roomtypes/15.jpg",
+    "image1": "img/roomtypes/13.jpg",
+    "image2": "img/roomtypes/14.jpg",
+    "image3": "img/roomtypes/15.jpg",
     "area": 30,
     "bed": "1 king",
     "adults": 2,
@@ -260,9 +260,9 @@ const rooms = [
   {
     "id": 6,
     "title": "Studio Twin Room",
-    "image1": "../img/roomtypes/16.jpg",
-    "image2": "../img/roomtypes/17.jpg",
-    "image3": "../img/roomtypes/18.jpg",
+    "image1": "img/roomtypes/16.jpg",
+    "image2": "img/roomtypes/17.jpg",
+    "image3": "img/roomtypes/18.jpg",
     "area": 38,
     "bed": "2 twin and 1 sofabed",
     "adults": 2,
@@ -283,9 +283,9 @@ const rooms = [
   {
     "id": 7,
     "title": "Studio Double Room",
-    "image1": "../img/roomtypes/19.jpg",
-    "image2": "../img/roomtypes/20.jpg",
-    "image3": "../img/roomtypes/21.jpg",
+    "image1": "img/roomtypes/19.jpg",
+    "image2": "img/roomtypes/20.jpg",
+    "image3": "img/roomtypes/21.jpg",
     "area": 36,
     "bed": "1 king and 1 sofabed",
     "adults": 2,
@@ -306,9 +306,9 @@ const rooms = [
    {
     "id": 8,
     "title": "1 Bedroom Suite",
-    "image1": "../img/roomtypes/22.jpg",
-    "image2": "../img/roomtypes/23.jpg",
-    "image3": "../img/roomtypes/24.jpg",
+    "image1": "img/roomtypes/22.jpg",
+    "image2": "img/roomtypes/23.jpg",
+    "image3": "img/roomtypes/24.jpg",
     "area": 55,
     "bed": "1 super king and 1 sofabed and 1 single",
     "adults": 3,
@@ -331,9 +331,9 @@ const rooms = [
     {
     "id": 9,
     "title": "2 Bedroom Suite",
-    "image1": "../img/roomtypes/25.jpg",
-    "image2": "../img/roomtypes/26.jpg",
-    "image3": "../img/roomtypes/27.jpg",
+    "image1": "img/roomtypes/25.jpg",
+    "image2": "img/roomtypes/26.jpg",
+    "image3": "img/roomtypes/27.jpg",
     "area": 90,
     "bed": "1 super king and 2 single and 1 sofabed",
     "adults": 4,
@@ -355,9 +355,9 @@ const rooms = [
   },{
      "id": 10,
     "title": "Presidential Suite",
-    "image1": "../img/roomtypes/28.jpg",
-    "image2": "../img/roomtypes/29.jpg",
-    "image3": "../img/roomtypes/30.jpg",
+    "image1": "img/roomtypes/28.jpg",
+    "image2": "img/roomtypes/29.jpg",
+    "image3": "img/roomtypes/30.jpg",
     "area": 140,
     "bed": "1 king and 2 single and 1 sofabed",
     "adults": 4,
@@ -445,7 +445,7 @@ document.querySelector('.products').innerHTML = rooms.map(room => {
                             </div>
                             <button class="more-info d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-room-id="${room.id}">More Info &rarr;</button>
                             
-                            <button class="btn btn-danger book-btn w-75 d-block mx-auto">Book Now</button>
+                            <button class="btn btn-warning book-btn w-75 d-block mx-auto">Book Now</button>
                         </div>
                     </li>
         `}).join('');
@@ -533,8 +533,95 @@ closeBtn2.addEventListener('click',()=>{
 })
 
 
+//review section
+//fake comment data
+const comment = [
+  {"name": "Emma Watson", "text": "Great value for money, totally worth it"},
+  {"name": "Liam Chen", "text": "Warm and attentive service, very satisfied"},
+  {"name": "Sophia Rodriguez", "text": "Friendly staff, felt like home"},
+  {"name": "Noah Kim", "text": "Clean room, excellent breakfast"},
+  {"name": "Olivia Smith", "text": "Convenient location, staff is super nice"},
+  {"name": "Mason Brown", "text": "Great facilities, wonderful experience"},
+  {"name": "Isabella Garcia", "text": "Perfect cleanliness, thoughtful service"},
+  {"name": "Ethan Johnson", "text": "Best bang for your buck, highly recommend"},
+  {"name": "Ava Martinez", "text": "Warm welcome, always ready to help"},
+  {"name": "Logan Davis", "text": "Comfortable stay, exceeded expectations"},
+  {"name": "Mia Wilson", "text": "Great attention to detail, very professional"},
+  {"name": "Lucas Miller", "text": "Excellent value, would come again"},
+  {"name": "Amelia Taylor", "text": "Top-notch service, highly impressed"},
+  {"name": "Alexander Moore", "text": "Beautiful room, amazing hospitality"},
+  {"name": "Charlotte Jackson", "text": "Quick check-in, very accommodating"},
+  {"name": "Benjamin White", "text": "Cozy atmosphere, staff went above and beyond"},
+  {"name": "Evelyn Harris", "text": "Spotless and comfortable, great experience"},
+  {"name": "James Thompson", "text": "Fantastic stay, will definitely return"},
+  {"name": "Abigail Martin", "text": "Super friendly team, highly recommended"},
+  {"name": "Daniel Robinson", "text": "Affordable luxury, exceeded all expectations"}
+];
+//get tracks
+const trackTop = document.getElementById('track-top');
+const trackMiddle = document.getElementById('track-middle');
+const trackBottom = document.getElementById('track-bottom');
+const tracks = [trackTop, trackMiddle, trackBottom];
+// Add animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fly {
+            0% {
+                left: 100%;
+                opacity: 1;
+            }
+            100% {
+                left: -300px;
+                opacity: 0.6;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 
+ //create avatar
+    function getAvatarUrl(userName) {
+        //cut space
+        const seed = userName.replace(/\s/g, '');
+        return `https://api.dicebear.com/9.x/adventurer/svg?seed=${seed}&size=80`;
+    }
 
+ // Create comment
+    function createComment(commentData, trackIndex) {
+    const card = document.createElement('div');
+    card.className = 'comment';
+    const avatarUrl = getAvatarUrl(commentData.name);   
+        // Add content 
+        card.innerHTML = `
+            <img class="comment-avatar" src="${avatarUrl}">
+            <div class="comment-content">
+                <div class="name">${commentData.name}</div>
+                <div class="text">${commentData.text}</div>
+            </div>
+        `;
+        
+        // Add to track
+        tracks[trackIndex].appendChild(card);
+        
+        // Remove comment after animation ends
+        card.addEventListener('animationend', () => {
+            card.remove();
+        });
+    }
+
+    let commentIndex = 0;
+    function addCommentToTrack(trackIndex) {
+        const commentData = comment[commentIndex % comment.length];
+        createComment(commentData, trackIndex);
+        commentIndex++;
+        // randomly add a comment every 3-7 seconds
+        const second = 3000 + Math.random() * 4000;
+        setTimeout(() => {
+            addCommentToTrack(trackIndex);
+        }, second);
+    }
+    addCommentToTrack(0); 
+    addCommentToTrack(1); 
+    addCommentToTrack(2); 
 
 
 

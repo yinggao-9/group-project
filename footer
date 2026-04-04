@@ -9,9 +9,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">About Us</h5>
                     <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
-                        <li><a class="collapse-item" href="#">Story</a></li>
-                        <li><a class="collapse-item" href="#">History</a></li>
-                        <li><a class="collapse-item" href="#">Service</a></li>
+                        <li><a class="collapse-item" href="../index.html#story">Story</a></li>
+                        <li><a class="collapse-item" href="../index.html#ourStory">History</a></li>
+                        <li><a class="collapse-item" href="../index.html#service">Service</a></li>
                     </ul>
                 </div>
                 <!-- Quick links -->
@@ -21,9 +21,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Quick links</h5>
                     <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
-                        <li><a class="collapse-item" href="#">Rooms</a></li>
-                        <li><a class="collapse-item" href="#">Booking</a></li>
-                        <li><a class="collapse-item" href="#">Sign Up</a></li>
+                        <li><a class="collapse-item" href="rooms.html">Rooms</a></li>
+                        <li><a class="collapse-item" href="about.html">Brand</a></li>
+                        <li><a class="collapse-item" href="login.html">Sign Up</a></li>
                     </ul>
                 </div>
                 <!-- Find Help -->
@@ -33,9 +33,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Find Help</h5>
                     <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
-                        <li><a class="collapse-item" href="#">FAQ</a></li>
-                        <li><a class="collapse-item" href="#">Privacy Policy</a></li>
-                        <li><a class="collapse-item" href="#">Cookie Policy </a></li>
+                        <li><a class="collapse-item" href="../index.html#FAQ">FAQ</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Cookie Policy </a></li>
                     </ul>
                 </div>
                 <!-- Contact Us -->
@@ -45,9 +45,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Contact Us</h5>
                     <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
                     </ul>
                 </div>
             </div>
@@ -86,7 +86,7 @@
             <div class="text-center">
             <p class="mb-0">&copy; 2026 Adlon Hotel</p>
             <p>All rights reserved.</p>  
-            <p>Privacy Policy | Cookie Policy | Cookie Settings</p>
+            <p id="policy">Privacy Policy | Cookie Policy | Cookie Settings</p>
             </div>
         </div>       
     </div>

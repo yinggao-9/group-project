@@ -1,47 +1,41 @@
- <!-- navbar -->
+    <!-- navbar -->
     <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand logo-link" href="index.html"><img src="img/logo.png" alt="logo" class="logo-img"></a>
+        <a class="navbar-brand logo-link" href="../index.html"><img src="img/logo.png" alt="logo" class="logo-img"></a>
         <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
         <ul class="nav align-items-center gap-5 d-none d-lg-flex">
             <li class="nav-item">
-                <a class="nav-double-link active" aria-current="page" href="#">
+                <a class="nav-double-link" href="../index.html">
                     <span>Hotel</span>
                     <span>Hotel</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="about.html">
                     <span>About us</span>
                     <span>About us</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="rooms.html">
                     <span>Rooms</span>
                     <span>Rooms</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-double-link" href="#">
-                    <span>Booking</span>
-                    <span>Booking</span>
                 </a>
             </li>
             <li class="nav-item">
                 <div class="username"></div> 
             </li>
             <li class="nav-item d-none MyAccount">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="myaccount.html">
                     <span>MyAccount</span>
                     <span>MyAccount</span>
                 </a>
             </li>
             <li class="nav-item login-li">
-                <a class="nav-link" href="pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+                <a class="nav-link" href="login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
             </li>
             <li class="nav-item d-none loginout-li">
-                <a class="nav-link" href="#"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+                <button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
             </li>
         </ul>
 
@@ -58,25 +52,22 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav align-items-center">
           <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link active" aria-current="page" href="#">Hotel</a>
+                <a class="nav-offcanvas-link" href="../index.html">Hotel</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="#">About us</a>
+                <a class="nav-offcanvas-link" href="about.html">About us</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="#">Rooms</a>
-            </li>
-            <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="#">Booking</a>
+                <a class="nav-offcanvas-link" href="rooms.html">Rooms</a>
             </li>
             <li class="nav-offcanvas-item MyAccount d-none">
-                <a class="nav-offcanvas-link" href="#">MyAccount</a> 
+                <a class="nav-offcanvas-link" href="myaccount.html">MyAccount</a> 
             </li>
             <li class="nav-offcanvas-item login-li">
-                <a class="nav-offcanvas-link" href="pages/login.html"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+                <a class="nav-offcanvas-link" href="login.html"><button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
             </li>
             <li class="nav-offcanvas-item loginout-li d-none">
-                <a class="nav-offcanvas-link" href="#"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+                <button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
             </li>
         </ul>
       </div>

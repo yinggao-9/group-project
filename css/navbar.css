@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: "Roboto";
 }
+
+a{
+    text-decoration: none;
+}
+
 /* navbar */
 .navbar{
     height: 80px;
@@ -20,29 +25,19 @@
     margin: 0 20px;
 }
 .logo-text{
-    /* position: fixed;
-    top:100px;
-    left:200px; */
     font-family: "Great Vibes";
     color: #ffffff;
     font-size: 2rem;
     letter-spacing: 5px;
     font-weight: 400;
-    z-index: 5;
 }
 
 /* logo img */
 .logo-img{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 4; 
-    transform: translateY(-30px);
-    transition: transform .6s;  
+    height: 80px;
+    transform: translateY(-4px);
 }
-.logo-img:hover{
-    transform: translateY(-30px) rotateY(-180deg); 
-}
+
 
 
  /* the movement effect of navbar menu  */
@@ -105,9 +100,7 @@
     color: #2b343c;
    font-size: larger;
 }
-.nav-offcanvas-link:hover{
-   border-bottom: 1.5px solid aquamarine;
-}
+
 .sign-offcanvas-btn{
     border-radius: 20px;
     border: none;
@@ -115,18 +108,4 @@
 }
 .offcanvas .btn-close:focus{
     box-shadow: none;
-}
-@media screen and (max-width: 1200px) {
-.logo-img{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 4; 
-    transform: translateY(0px);
-    transition: transform .6s;  
-}
-.logo-text{
-    display: none;
-}
-    
 }
