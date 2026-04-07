@@ -584,25 +584,27 @@ a{
 .review-section .track{
     position: relative;
     width: 100%;
-    height: 120px;
-    margin-bottom: 30px;
+    height: 100px;
+    margin-bottom: 20px;
     overflow: hidden;
 }
 .comment {
     position: absolute;
-    background: rgb(149, 246, 197);  
+    /* background: rgb(149, 246, 197);   */
+    background-color: rgb(246,195,68);
     border-radius: 20px;
-    padding: 10px 15px;
-    width: 250px;
+    padding: 10px 5px;
+    width: 220px;
     top: 50%;
     transform: translateY(-50%);
     left: 100%;
     font-size: 14px;
     animation: fly 20s linear forwards;
-    color: black;  
+    color: rgb(12, 12, 12);  
     display: flex;
     gap: 10px;
     align-items: flex-start;
+    /* min-height: 70px; */
 }
 .comment .name {
     font-weight: bold;

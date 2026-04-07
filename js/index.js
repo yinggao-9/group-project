@@ -601,27 +601,24 @@ const tracks = [trackTop, trackMiddle, trackBottom];
         
         // Add to track
         tracks[trackIndex].appendChild(card);
-        
-        // Remove comment after animation ends
+
         card.addEventListener('animationend', () => {
-            card.remove();
-        });
+            card.remove();});
     }
 
     let commentIndex = 0;
-    function addCommentToTrack(trackIndex) {
-        const commentData = comment[commentIndex % comment.length];
-        createComment(commentData, trackIndex);
-        commentIndex++;
-        // randomly add a comment every 3-7 seconds
-        const second = 3000 + Math.random() * 4000;
-        setTimeout(() => {
-            addCommentToTrack(trackIndex);
-        }, second);
+    let currentTrack = 0;
+    const totalTracks = 3;
+    function addCommentToTrack() {
+    const commentData = comment[commentIndex % comment.length];
+    createComment(commentData, currentTrack);
+    commentIndex++;
+    currentTrack = (currentTrack + 1) % totalTracks;
+    const delay = 1500 + Math.random() * 3000;
+    setTimeout(addCommentToTrack, delay);
     }
-    addCommentToTrack(0); 
-    addCommentToTrack(1); 
-    addCommentToTrack(2); 
+
+    addCommentToTrack();
 
 
 
