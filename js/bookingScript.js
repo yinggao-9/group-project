@@ -84,10 +84,20 @@ function validateForm() { /*Declares the function that validates all form fields
 
 
 
+
     // SUCCESS
     const success = document.getElementById("success"); /*If everything is correct, shows a success message and resets the form.*/
     success.style.display = "block";
     success.textContent = "🌿 Booking completed successfully!";
+
+    // SAVE BOOKING DATA (ADD HERE)
+    const selectedRoom = JSON.parse(sessionStorage.getItem("selectedBooking"));
+    if(selectedRoom){
+        localStorage.setItem("selectedBooking", JSON.stringify(selectedRoom));
+    }
+
+    // REDIRECT TO MY ACCOUNT (ADD HERE)
+    window.location.href = "myAccount.html#roomDetails";
 
     document.getElementById("paymentForm").reset();
     return false;
@@ -109,6 +119,13 @@ fields.forEach(id => { /*When the user types in a field, removes the error class
     });
 });
 
+ // CARD NUMBER - allow only numbers
+  const cardInput = document.querySelector("#card");
+
+  cardInput.addEventListener("input", function () {
+      this.value = this.value.replace(/\D/g, '');
+  });  
+
   // MOBILE PHONE //
   const phoneInput = document.querySelector("#phone");
   window.intlTelInput(phoneInput, {
@@ -117,6 +134,13 @@ fields.forEach(id => { /*When the user types in a field, removes the error class
     separateDialCode: true,
     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.11/build/js/utils.js"
   });
+
+    // Allow only numbers
+    phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+ 
 
   // COUNTRY/ REGION AUTOMATICALLY // 
   fetch("https://restcountries.com/v3.1/all?fields=name,cca2")

@@ -483,13 +483,34 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
+     /*
+     FOR LOCAL STORAGE FOR MYACCOUNT.HTML /*
+     */
+
         const selectedBooking = {
             roomId: room.id,
+            roomName: room.name,
+            roomDescription: room.description,
+            roomPrice: room.price,
+            roomImage: room.image,
             checkInDate: selectedCheckIn,
-            checkOutDate: selectedCheckOut
+            checkOutDate: selectedCheckOut,
+            guests: capacityFilter.value || room.capacity
         };
 
-        localStorage.setItem("selectedBooking", JSON.stringify(selectedBooking));
+        // Step 1: Save selection in sessionStorage
+        sessionStorage.setItem("selectedBooking", JSON.stringify(selectedBooking));
+
+        // Step 2: Retrieve existing booking history
+        let bookingHistory = JSON.parse(localStorage.getItem("bookingHistory")) || [];
+
+        // Step 3: Add the new booking to history
+        bookingHistory.push(selectedBooking);
+
+        // Step 4: Save updated history to localStorage
+        localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
+
+        // Step 5: Redirect to booking page
         window.location.href = "booking.html";
     }
 
