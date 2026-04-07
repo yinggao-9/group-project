@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>My Account | Adlon Hotel</title>
+				<!--Bootstrap-->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+				<!-- bootstrap css -->
+    			<link rel="stylesheet" href="../css/bootstrap.min.css">
+				<!-- google font Roboto -->
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+				<!-- iconfont -->
+				<link rel="stylesheet" href="../icon/font_5133841_4ao6qal2s5d/iconfont.css">
+                <!--Local css-->
+                <link rel="stylesheet" href="../css/ying-index.css">
+                <link rel="stylesheet" href="../css/myAccountStyle.css">
+                <link rel="stylesheet" href="../css/navbar.css">
+				<link rel="stylesheet" href="../css/footer.css">
+				
+	</head>
+
+	<body>
+
+   <!-- navbar -->
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand logo-link" href="../index.html"><img src="../img/logo.png" alt="logo" class="logo-img"></a>
+        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <ul class="nav align-items-center gap-5 d-none d-lg-flex">
+            <li class="nav-item">
+                <a class="nav-double-link" href="../index.html">
+                    <span>Hotel</span>
+                    <span>Hotel</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="/pages/about.html">
+                    <span>About us</span>
+                    <span>About us</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="/pages/room-selection.html">
+                    <span>Rooms</span>
+                    <span>Rooms</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <div class="username"></div> 
+            </li>
+            <li class="nav-item d-none MyAccount">
+                <a class="nav-double-link active" aria-current="page" href="/pages/myAccount.html">
+                    <span>MyAccount</span>
+                    <span>MyAccount</span>
+                </a>
+            </li>
+            <li class="nav-item login-li">
+                <a class="nav-link" href="/pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-item d-none loginout-li">
+                <button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
+            </li>
+        </ul>
+
+
+    <!-- navbar-toggler -->
+    <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header mt-3">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Adlon Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="../pages/index.html">Hotel</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="/pages/about.html">About us</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="/pages/room-selection.html">Rooms</a>
+            </li>
+            <li class="nav-offcanvas-item MyAccount d-none">
+                <a class="nav-offcanvas-link active" aria-current="page" href="/pages/myAccount.html">MyAccount</a> 
+            </li>
+            <li class="nav-offcanvas-item login-li">
+                <a class="nav-offcanvas-link" href="/pages/login.html"><button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-offcanvas-item loginout-li d-none">
+                <button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <!-- end navbar -->
+
+		<!-- Main Container -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Left Column: Profile + Rewards -->
+            <div class="col-md-3">
+                <!-- Profile Section -->
+                <div id="profileSection">
+                <h3>Profile</h3>
+                <div class="card p-3 mb-4">
+                    <p><strong>Name:</strong> <span id="profileName">John Doe</span></p>
+                    <p><strong>Email:</strong> <span id="profileEmail">example@example.com</span></p>
+                    <p><strong>Phone:</strong> <span id="profilePhone">+123456789</span></p>
+                    <button class="btn btn-edit-profile" id="editProfileBtn">Edit Profile</button>
+                </div>
+                </div>
+
+                        <!-- Update Profile Form -->
+                <div id="updateSection">
+                <div class="card p-3 mb-4">
+                <h3>Update Profile</h3>
+                <form id="updateProfileForm">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <div class="phone-input-wrapper">
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter phone number">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                    <div id="successMessage" class="success-message d-none">
+                    ✅ Profile updated
+                    </div>
+                    </div>
+
+                    <div class="mb-3">
+                    <button type="submit" class="btn btn-save">Save Changes</button>
+                    </div>
+
+
+                    
+                </form>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Middle Column: Booking History -->
+            <div class="col-md-5">
+                <h3>Booking History</h3>
+                <table class="table table-striped" id="bookingHistoryTable">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Room</th>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Bookings will be populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right Column: Room Description -->
+            <div class="col-md-4">
+                <h3>Selected Room</h3>
+                <div class="card p-3" id="roomDetails">
+                    <p>No room selected yet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+   <!-- footer -->
+    <div class="footer">
+        <div class="container footer-container">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- about us -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#aboutUs" aria-expanded="false" aria-controls="aboutUs">About Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">About Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
+                        <li><a class="collapse-item" href="../index.html#story">Story</a></li>
+                        <li><a class="collapse-item" href="../index.html#ourStory">History</a></li>
+                        <li><a class="collapse-item" href="../index.html#service">Service</a></li>
+                    </ul>
+                </div>
+                <!-- Quick links -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#quickLinks" aria-expanded="false" aria-controls="quickLinks">Quick links</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Quick links</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
+                        <li><a class="collapse-item" href="room-selection.html">Rooms</a></li>
+                        <li><a class="collapse-item" href="about-adlon-hotel.html">Brand</a></li>
+                        <li><a class="collapse-item" href="login.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- Find Help -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#findHelp" aria-expanded="false" aria-controls="findHelp">Find Help</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Find Help</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
+                        <li><a class="collapse-item" href="../index.html#FAQ">FAQ</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Cookie Policy </a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#contactUs" aria-expanded="false" aria-controls="contactUs">Contact Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Contact Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- social media section -->
+        <!-- cut line 1-->
+        <hr class="cutline d-none d-sm-block">
+        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+                    <div class="media-wrapper">
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                            <span>@AdlonHotel</span>
+                        </div>
+                        <div class="media-btn">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                            <span>@AdlonHotel</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                            <span>@AdlonHotel</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                            <span>@AdlonHotel</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                            <span>@AdlonHotel</span>
+                        </div>
+                    </div>
+        </div>
+        <!-- cut line 2 -->
+        <hr class="cutline">
+        <!-- copyright -->
+        <div class="copyright">
+            <div class="text-center">
+            <p class="mb-0">&copy; 2026 Adlon Hotel</p>
+            <p>All rights reserved.</p>  
+            <p id="policy">Privacy Policy | Cookie Policy | Cookie Settings</p>
+            </div>
+        </div>       
+    </div>
+    
+    <!-- end footer -->
+
+
+		
+        <!-- bootstrap js -->
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <!--phone bootstrap js-->
+        <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.11/build/js/intlTelInput.min.js"></script>
+		<!--bootstrap js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- iconfont js -->
+        <script src="../icon/font_5133841_yoi6izyebpl/iconfont.js"></script>
+        <!-- navbar js -->
+        <script src="../js/navbar.js"></script>
+        <!-- myAccount js -->
+        <script src="../js/myAccountScript.js"></script>
+
+
+	</body>
+</html>

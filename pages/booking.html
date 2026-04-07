@@ -20,57 +20,52 @@
 				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css"> <!-- link to bootstrap to show all the countries for the information address-->
 				<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"> <!-- links the webpage to an external CSS file for the AOS library (that adds animations when elements appear as the user scrolls down the page) --> 
 				<!--Local css-->
+				<link rel="stylesheet" href="../css/ying-index.css">
 				<link rel="stylesheet" href="../css/bookingstyle.css">
 				<link rel="stylesheet" href="../css/navbar.css">
+				<link rel="stylesheet" href="../css/footer.css">
 
 	</head>
 
 	<body>
 
-		 <!-- navbar -->
+     <!-- navbar -->
     <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand logo-link" href="index.html"><img src="../img/logo.png" alt="logo" class="logo-img"></a>
-        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <a href="../index.html"><span class="logo-text"><img src="../img/logo.png" alt="logo" class="logo-img">Adlon Hotel</span></a>
         <ul class="nav align-items-center gap-5 d-none d-lg-flex">
             <li class="nav-item">
-                <a class="nav-double-link" aria-current="page" href="#">
+                <a class="nav-double-link" href="../index.html">
                     <span>Hotel</span>
                     <span>Hotel</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="about-adlon-hotel.html">
                     <span>About us</span>
                     <span>About us</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="room-selection">
                     <span>Rooms</span>
                     <span>Rooms</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-double-link active" href="#">
-                    <span>Booking</span>
-                    <span>Booking</span>
                 </a>
             </li>
             <li class="nav-item">
                 <div class="username"></div> 
             </li>
             <li class="nav-item d-none MyAccount">
-                <a class="nav-double-link" href="#">
+                <a class="nav-double-link" href="myAccount.html">
                     <span>MyAccount</span>
                     <span>MyAccount</span>
                 </a>
             </li>
             <li class="nav-item login-li">
-                <a class="nav-link" href="pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+                <a class="nav-link" href="login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
             </li>
             <li class="nav-item d-none loginout-li">
-                <a class="nav-link" href="#"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+                <button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
             </li>
         </ul>
 
@@ -87,25 +82,22 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav align-items-center">
           <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" aria-current="page" href="#">Hotel</a>
+                <a class="nav-offcanvas-link" href="../index.html">Hotel</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="#">About us</a>
+                <a class="nav-offcanvas-link" href="about-adlon-hotel.html">About us</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="#">Rooms</a>
-            </li>
-            <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link active" href="#">Booking</a>
+                <a class="nav-offcanvas-link" href="room-selection.html">Rooms</a>
             </li>
             <li class="nav-offcanvas-item MyAccount d-none">
-                <a class="nav-offcanvas-link" href="#">MyAccount</a> 
+                <a class="nav-offcanvas-link" href="myAccount.html">MyAccount</a> 
             </li>
             <li class="nav-offcanvas-item login-li">
-                <a class="nav-offcanvas-link" href="pages/login.html"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+                <a class="nav-offcanvas-link" href="login.html"><button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
             </li>
             <li class="nav-offcanvas-item loginout-li d-none">
-                <a class="nav-offcanvas-link" href="#"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+                <button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button>
             </li>
         </ul>
       </div>
@@ -249,7 +241,7 @@
 			<div class="row mb-2 mt-2">
 				<div class="col-md-6 col-lg-4">
 					<label class="form-label">Credit / Debit Card Number</label>
-					<input type="text" id="card" class="form-control" inputmode="numeric" maxlength="16">
+					<input type="text" id="card" class="form-control" inputmode="numeric" maxlength="16" pattern="[0-9]*">
 					<small class="text-danger d-none" id="cardError">
 					Card number is required.
 					</small>
@@ -310,7 +302,7 @@
 			
 
 
-			 <!-- footer -->
+ <!-- footer -->
     <div class="footer">
         <div class="container footer-container">
             <div class="row row-cols-1 row-cols-md-4">
@@ -321,9 +313,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">About Us</h5>
                     <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
-                        <li><a class="collapse-item" href="#">Story</a></li>
-                        <li><a class="collapse-item" href="#">History</a></li>
-                        <li><a class="collapse-item" href="#">Service</a></li>
+                        <li><a class="collapse-item" href="../index.html#story">Story</a></li>
+                        <li><a class="collapse-item" href="../index.html#ourStory">History</a></li>
+                        <li><a class="collapse-item" href="../index.html#service">Service</a></li>
                     </ul>
                 </div>
                 <!-- Quick links -->
@@ -333,9 +325,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Quick links</h5>
                     <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
-                        <li><a class="collapse-item" href="#">Rooms</a></li>
-                        <li><a class="collapse-item" href="#">Booking</a></li>
-                        <li><a class="collapse-item" href="#">Sign Up</a></li>
+                        <li><a class="collapse-item" href="room-selection.html">Rooms</a></li>
+                        <li><a class="collapse-item" href="about-adlon-hotel.html">Brand</a></li>
+                        <li><a class="collapse-item" href="login.html">Sign Up</a></li>
                     </ul>
                 </div>
                 <!-- Find Help -->
@@ -345,9 +337,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Find Help</h5>
                     <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
-                        <li><a class="collapse-item" href="#">FAQ</a></li>
-                        <li><a class="collapse-item" href="#">Privacy Policy</a></li>
-                        <li><a class="collapse-item" href="#">Cookie Policy </a></li>
+                        <li><a class="collapse-item" href="../index.html#FAQ">FAQ</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="../index.html#policy">Cookie Policy </a></li>
                     </ul>
                 </div>
                 <!-- Contact Us -->
@@ -357,9 +349,9 @@
                     <!-- normal title in large screen -->
                     <h5 class="normal-title d-none d-md-block">Contact Us</h5>
                     <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
-                        <li><a class="collapse-item" href="#"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="../index.html#contact"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
                     </ul>
                 </div>
             </div>
@@ -371,23 +363,23 @@
                     <div class="media-wrapper">
                         <div class="media-btn">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
-                            <span>adlon hotel@instgram</span>
+                            <span>@AdlonHotel</span>
                         </div>
                         <div class="media-btn">
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
-                            <span>adlon hotel@facebook</span>
+                            <span>@AdlonHotel</span>
                         </div>
                         <div class="media-btn">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
-                            <span>adlon hotel@youtobe</span>
+                            <span>@AdlonHotel</span>
                         </div>
                         <div class="media-btn">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
-                            <span>adlon hotel@ticktok</span>
+                            <span>@AdlonHotel</span>
                         </div>
                         <div class="media-btn">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
-                            <span>adlon hotel@linkin</span>
+                            <span>@AdlonHotel</span>
                         </div>
                     </div>
         </div>
@@ -398,17 +390,24 @@
             <div class="text-center">
             <p class="mb-0">&copy; 2026 Adlon Hotel</p>
             <p>All rights reserved.</p>  
-            <p>Privacy Policy | Cookie Policy | Cookie Settings</p>
+            <p id="policy">Privacy Policy | Cookie Policy | Cookie Settings</p>
             </div>
         </div>       
     </div>
     
     <!-- end footer -->
 
+			<!--booking js-->
 			<script src="../js/bookingscript.js"></script>
+			<!-- bootstrap js -->
+			<script src="../js/bootstrap.bundle.min.js"></script>
+
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+			<!--phone bootstrap js-->
 			<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.11/build/js/intlTelInput.min.js"></script>
+			<!--iconfont js-->
 			<script src="../icon/font_5133841_yoi6izyebpl/iconfont.js"></script>
+			<!-- navbar js -->
 			<script src="../js/navbar.js"></script>
 
 
