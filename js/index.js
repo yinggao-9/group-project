@@ -140,7 +140,7 @@ document.querySelector(".guests-btn").addEventListener("click",()=>{
 //clicking search button will redirect to room page and dispaly available rooms
 const searchBtn = document.querySelector('.search-btn');
 searchBtn.addEventListener("click",()=>{
-    window.location.href="pages/rooms.html?filter=available#roomsContainer"
+    window.location.href="pages/room-selection.html?filter=available#roomsContainer"
 })
 
     
