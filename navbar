@@ -1,8 +1,7 @@
     <!-- navbar -->
     <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand logo-link" href="../index.html"><img src="img/logo.png" alt="logo" class="logo-img"></a>
-        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <a href="../index.html"><span class="logo-text"><img src="img/logo.png" alt="logo" class="logo-img">Adlon Hotel</span></a>
         <ul class="nav align-items-center gap-5 d-none d-lg-flex">
             <li class="nav-item">
                 <a class="nav-double-link" href="../index.html">
@@ -11,13 +10,13 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="about.html">
+                <a class="nav-double-link" href="about-adlon-hotel.html">
                     <span>About us</span>
                     <span>About us</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-double-link" href="rooms.html">
+                <a class="nav-double-link" href="room-selection">
                     <span>Rooms</span>
                     <span>Rooms</span>
                 </a>
@@ -26,7 +25,7 @@
                 <div class="username"></div> 
             </li>
             <li class="nav-item d-none MyAccount">
-                <a class="nav-double-link" href="myaccount.html">
+                <a class="nav-double-link" href="myAccount.html">
                     <span>MyAccount</span>
                     <span>MyAccount</span>
                 </a>
@@ -55,13 +54,13 @@
                 <a class="nav-offcanvas-link" href="../index.html">Hotel</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="about.html">About us</a>
+                <a class="nav-offcanvas-link" href="about-adlon-hotel.html">About us</a>
             </li>
             <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="rooms.html">Rooms</a>
+                <a class="nav-offcanvas-link" href="room-selection.html">Rooms</a>
             </li>
             <li class="nav-offcanvas-item MyAccount d-none">
-                <a class="nav-offcanvas-link" href="myaccount.html">MyAccount</a> 
+                <a class="nav-offcanvas-link" href="myAccount.html">MyAccount</a> 
             </li>
             <li class="nav-offcanvas-item login-li">
                 <a class="nav-offcanvas-link" href="login.html"><button class="btn btn-outline-success sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
