@@ -211,7 +211,7 @@ const rooms = [
         "Bathrobe and slippers",
         "Free Wi-Fi",
         "Magnifying mirror",
-        "television",
+        "Television",
         "Professional hair dryer"
         ]
     },
@@ -231,7 +231,7 @@ const rooms = [
         "Bathrobe and slippers",
         "Free Wi-Fi",
         "Magnifying mirror",
-        "television",
+        "Television",
         "Professional hair dryer"
         ]
     },
