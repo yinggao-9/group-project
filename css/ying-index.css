@@ -572,9 +572,10 @@ a{
     opacity: 0;           
     transition: opacity 0.2s ease;
     display: inline-block;
+    margin-left: 2px;
 }
 .media-item:hover {
-    width: 200px;         
+    width: 140px;         
     background-color: #ffffff; 
 }
 .media-item:hover .social-text {
@@ -701,7 +702,7 @@ a{
 }
 .media-wrapper .media-btn:hover{
     background-color: #ffffff;
-    width:210px;
+    width:150px;
 }
 .media-btn .icon{
     height: 40px;
