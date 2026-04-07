@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Adlon Hotel</title>
+				<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+				<link rel="stylesheet" href="../css/about-style.css">
+	</head>
+
+	<body>
+			    <!-- navbar -->
+    <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand logo-link" href="index.html"><img src="img/logo.png" alt="logo" class="logo-img"></a>
+        <a href="index.html"><span class="logo-text">Adlon Hotel</span></a>
+        <ul class="nav align-items-center gap-5 d-none d-lg-flex">
+            <li class="nav-item">
+                <a class="nav-double-link" aria-current="page" href="#">
+                    <span>Hotel</span>
+                    <span>Hotel</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link  active" href="#">
+                    <span>About us</span>
+                    <span>About us</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="#">
+                    <span>Rooms</span>
+                    <span>Rooms</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-double-link" href="#">
+                    <span>Booking</span>
+                    <span>Booking</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <div class="username"></div> 
+            </li>
+            <li class="nav-item d-none MyAccount">
+                <a class="nav-double-link" href="#">
+                    <span>MyAccount</span>
+                    <span>MyAccount</span>
+                </a>
+            </li>
+            <li class="nav-item login-li">
+                <a class="nav-link" href="pages/login.html"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-item d-none loginout-li">
+                <a class="nav-link" href="#"><button class="btn btn-outline-light sign-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+
+
+    <!-- navbar-toggler -->
+    <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header mt-3">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Adlon Hotel</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="#">Hotel</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link active" aria-current="page" href="#">About us</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="#">Rooms</a>
+            </li>
+            <li class="nav-offcanvas-item">
+                <a class="nav-offcanvas-link" href="#">Booking</a>
+            </li>
+            <li class="nav-offcanvas-item MyAccount d-none">
+                <a class="nav-offcanvas-link" href="#">MyAccount</a> 
+            </li>
+            <li class="nav-offcanvas-item login-li">
+                <a class="nav-offcanvas-link" href="pages/login.html"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN IN</button></a>
+            </li>
+            <li class="nav-offcanvas-item loginout-li d-none">
+                <a class="nav-offcanvas-link" href="#"><button class="btn btn-outline-dark sign-offcanvas-btn"><span class="iconfont icon-user1 me-2"></span>SIGN OUT</button></a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <!-- end navbar -->
+		
+
+
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Adlon Hotel</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tag">Luxury Hospitality • Timeless Comfort • Memorable Stays</p>
+            <h1>About Adlon Hotel</h1>
+            <p>
+                At Adlon Hotel, we bring together refined comfort, attentive service,
+                and elegant surroundings to create a stay that feels both luxurious and welcoming.
+            </p>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="about-intro">
+        <div class="about-intro-text">
+            <span class="section-label">Our Story</span>
+            <h2>A Hotel Designed Around Comfort, Service, and Experience</h2>
+            <p>
+                Adlon Hotel was created to offer guests more than simply a place to stay.
+                Our vision is to provide a premium hospitality experience where thoughtful service,
+                beautifully designed spaces, and modern comfort come together effortlessly.
+            </p>
+            <p>
+                From business travellers seeking convenience and quiet sophistication,
+                to couples, families, and international guests looking for relaxation and memorable experiences,
+                Adlon Hotel is designed to meet the expectations of today’s discerning traveller.
+            </p>
+            <p>
+                Every detail of the hotel reflects our commitment to quality — from our elegantly appointed rooms
+                and suites to our welcoming atmosphere, professional staff, and carefully curated guest amenities.
+                We aim to create an experience that feels polished, peaceful, and genuinely hospitable from arrival to departure.
+            </p>
+        </div>
+
+        <div class="about-intro-image">
+            <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" alt="Luxury hotel interior">
+        </div>
+    </section>
+
+    <!-- VALUES / FEATURES -->
+    <section class="about-features">
+        <div class="section-heading">
+            <span class="section-label">Why Guests Choose Us</span>
+            <h2>Luxury With Purpose</h2>
+            <p>
+                We focus on the elements that matter most in a premium hotel stay:
+                comfort, service, atmosphere, and consistency.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <article class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bed"></i></div>
+                <h3>Elegant Accommodation</h3>
+                <p>
+                    Our rooms and suites are thoughtfully designed to combine style,
+                    comfort, and functionality for every kind of guest.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon"><i class="fas fa-concierge-bell"></i></div>
+                <h3>Attentive Service</h3>
+                <p>
+                    We believe exceptional hospitality begins with people,
+                    which is why our team is committed to warm, professional, and responsive service.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Premium Experience</h3>
+                <p>
+                    From dining and relaxation to business-friendly amenities,
+                    every part of the guest journey is designed to feel smooth and elevated.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Ideal Setting</h3>
+                <p>
+                    Adlon Hotel offers a welcoming base for leisure and business stays,
+                    balancing accessibility, comfort, and a sense of retreat.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="about-experience">
+        <div class="experience-image">
+            <img src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg" alt="Hotel room with elegant design">
+        </div>
+
+        <div class="experience-text">
+            <span class="section-label">The Guest Experience</span>
+            <h2>More Than a Stay</h2>
+            <p>
+                A great hotel experience is built on balance — efficiency without feeling rushed,
+                luxury without feeling distant, and comfort without compromise.
+            </p>
+            <p>
+                At Adlon Hotel, guests can expect beautifully prepared rooms,
+                inviting communal spaces, high standards of cleanliness, and a service culture
+                centered on care, discretion, and attention to detail.
+            </p>
+            <p>
+                Whether you are staying for a weekend escape, a family trip,
+                a special occasion, or a business visit, our goal is to make each stay seamless,
+                restful, and memorable for all the right reasons.
+            </p>
+        </div>
+    </section>
+
+    <!-- HOTEL STATS -->
+    <section class="about-stats">
+        <div class="stat-box">
+            <h3>50+</h3>
+            <p>Luxury Rooms & Suites</p>
+        </div>
+        <div class="stat-box">
+            <h3>24/7</h3>
+            <p>Guest Support</p>
+        </div>
+        <div class="stat-box">
+            <h3>Premium</h3>
+            <p>Comfort & Service Standards</p>
+        </div>
+        <div class="stat-box">
+            <h3>Tailored</h3>
+            <p>For Leisure & Business Stays</p>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="about-values">
+        <div class="section-heading">
+            <span class="section-label">Our Commitment</span>
+            <h2>What Defines Adlon Hotel</h2>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-item">
+                <h3>Hospitality</h3>
+                <p>
+                    We place genuine guest care at the centre of everything we do.
+                </p>
+            </div>
+
+            <div class="value-item">
+                <h3>Comfort</h3>
+                <p>
+                    We create environments that are calm, refined, and enjoyable to return to.
+                </p>
+            </div>
+
+            <div class="value-item">
+                <h3>Quality</h3>
+                <p>
+                    We maintain high standards across accommodation, amenities, and service delivery.
+                </p>
+            </div>
+
+            <div class="value-item">
+                <h3>Consistency</h3>
+                <p>
+                    We aim to deliver a dependable, premium experience for every guest and every stay.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="cta-content">
+            <span class="section-label">Plan Your Stay</span>
+            <h2>Experience Adlon Hotel for Yourself</h2>
+            <p>
+                Explore our rooms and suites, discover the perfect fit for your stay,
+                and enjoy comfort, elegance, and attentive hospitality at Adlon Hotel.
+            </p>
+            <div class="cta-buttons">
+                <a href="room-selection.html" class="btn btn-primary">View Rooms</a>
+                <a href="booking.html" class="btn btn-secondary">Book Your Stay</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
+
+
+		
+		 <!-- footer -->
+    <div class="footer">
+        <div class="container footer-container">
+            <div class="row row-cols-1 row-cols-md-4">
+                <!-- about us -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#aboutUs" aria-expanded="false" aria-controls="aboutUs">About Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">About Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="aboutUs"> 
+                        <li><a class="collapse-item" href="#">Story</a></li>
+                        <li><a class="collapse-item" href="#">History</a></li>
+                        <li><a class="collapse-item" href="#">Service</a></li>
+                    </ul>
+                </div>
+                <!-- Quick links -->
+                <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#quickLinks" aria-expanded="false" aria-controls="quickLinks">Quick links</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Quick links</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="quickLinks"> 
+                        <li><a class="collapse-item" href="#">Rooms</a></li>
+                        <li><a class="collapse-item" href="#">Booking</a></li>
+                        <li><a class="collapse-item" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+                <!-- Find Help -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#findHelp" aria-expanded="false" aria-controls="findHelp">Find Help</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Find Help</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
+                        <li><a class="collapse-item" href="#">FAQ</a></li>
+                        <li><a class="collapse-item" href="#">Privacy Policy</a></li>
+                        <li><a class="collapse-item" href="#">Cookie Policy </a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                 <div class="col">
+                    <!-- hide title in large screen -->
+                    <h5 class="hide-title d-md-none"><button class="btn" data-bs-toggle="collapse" data-bs-target="#contactUs" aria-expanded="false" aria-controls="contactUs">Contact Us</button></h5>
+                    <!-- normal title in large screen -->
+                    <h5 class="normal-title d-none d-md-block">Contact Us</h5>
+                    <ul class="collapse collapse-menu d-md-block" id="contactUs"> 
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone2 me-1"></span>Phone: +353 12345</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-phone me-1"></span>booking: +353 54321</a></li>
+                        <li><a class="collapse-item" href="#"><span class="iconfont icon-email me-1"></span>Email:Adlon Hotel@com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- social media section -->
+        <!-- cut line 1-->
+        <hr class="cutline d-none d-sm-block">
+        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+                    <div class="media-wrapper">
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
+                            <span>adlon hotel@instgram</span>
+                        </div>
+                        <div class="media-btn">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-facebook1"></use></svg>
+                            <span>adlon hotel@facebook</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-youtube"></use></svg>
+                            <span>adlon hotel@youtobe</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-douyin2"></use></svg>
+                            <span>adlon hotel@ticktok</span>
+                        </div>
+                        <div class="media-btn">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkin2"></use></svg>
+                            <span>adlon hotel@linkin</span>
+                        </div>
+                    </div>
+        </div>
+        <!-- cut line 2 -->
+        <hr class="cutline">
+        <!-- copyright -->
+        <div class="copyright">
+            <div class="text-center">
+            <p class="mb-0">&copy; 2026 Adlon Hotel</p>
+            <p>All rights reserved.</p>  
+            <p>Privacy Policy | Cookie Policy | Cookie Settings</p>
+            </div>
+        </div>       
+    </div>
+    
+    <!-- end footer -->  
+		
+
+		  
+		  
+		  
+		  
+
+			<script src="roomscript.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> 
+
+	</body>
+</html>
