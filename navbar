@@ -1,10 +1,10 @@
-    <!-- navbar -->
+ <!-- navbar -->
     <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-        <a href="../index.html"><span class="logo-text"><img src="img/logo.png" alt="logo" class="logo-img">Adlon Hotel</span></a>
+        <a href="../index.html"><span class="logo-text"><img src="../img/logo.png" alt="logo" class="logo-img">Adlon Hotel</span></a>
         <ul class="nav align-items-center gap-5 d-none d-lg-flex">
             <li class="nav-item">
-                <a class="nav-double-link" href="../index.html">
+                <a class="nav-double-link active" aria-current="page" href="../index.html">
                     <span>Hotel</span>
                     <span>Hotel</span>
                 </a>
@@ -51,7 +51,7 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav align-items-center">
           <li class="nav-offcanvas-item">
-                <a class="nav-offcanvas-link" href="../index.html">Hotel</a>
+                <a class="nav-offcanvas-link active" aria-current="page" href="../index.html">Hotel</a>
             </li>
             <li class="nav-offcanvas-item">
                 <a class="nav-offcanvas-link" href="about-adlon-hotel.html">About us</a>
@@ -73,5 +73,3 @@
     </div>
   </div>
 </nav>
-
-    <!-- end navbar -->
