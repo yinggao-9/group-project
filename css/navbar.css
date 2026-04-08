@@ -72,8 +72,10 @@ a{
 
 /* offcanvas */
 /* navbar-toggler btn  .offcanvas-body, .navbar-nav ,*/
+
 .offcanvas-body, .navbar-nav{
     padding: 0;
+    z-index:9999 !important;
 }
 .navbar-toggler{
     background-color: #ffffff !important;
