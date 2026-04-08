@@ -132,10 +132,18 @@ if (inputEmail.value != '' && inputPassword.value != ''){
         return false;
     }else{
         const loginUser = {
-        username: currentUser.username
+            username: currentUser.username
         }
         localStorage.setItem("currentUser",JSON.stringify(loginUser));
-         loginForm.action = "../index.html";
+
+        // save profile for MyAccount
+        localStorage.setItem("userProfile", JSON.stringify({
+            name: currentUser.username,
+            email: currentUser.email,
+            phone: ""
+        }));
+
+        loginForm.action = "../index.html";
         }
     }
 }
