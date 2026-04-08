@@ -150,8 +150,8 @@ const baseRooms = [
 ];
 
 /* =========================================
-   DEMO INVENTORY EXTENSION
-   Creates additional rooms so pagination works
+   INVENTORY EXTENSION
+   Creates additional rooms for pagination
 ========================================= */
 const rooms = [...baseRooms];
 let nextId = baseRooms.length + 1;
@@ -451,10 +451,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /**
      * Handles Book Now clicks.
-     * Validates date selection, checks availability immediately,
-     * then stores booking data and redirects to booking.html.
+     * Validates login status, date selection, and availability.
+     * If the user is not logged in, they are redirected to the login page first.
      */
     function handleBookButtonClick(roomId) {
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (!currentUser) {
+            alert("Please log in first before making a reservation.");
+            localStorage.setItem("redirectAfterLogin", window.location.href);
+            window.location.href = "login.html";
+            return;
+        }
+
         const { checkInDate: selectedCheckIn, checkOutDate: selectedCheckOut } = getSelectedStayDates();
 
         if (!selectedCheckIn || !selectedCheckOut) {
@@ -483,34 +492,13 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-     /*
-     FOR LOCAL STORAGE FOR MYACCOUNT.HTML /*
-     */
-
         const selectedBooking = {
             roomId: room.id,
-            roomName: room.name,
-            roomDescription: room.description,
-            roomPrice: room.price,
-            roomImage: room.image,
             checkInDate: selectedCheckIn,
-            checkOutDate: selectedCheckOut,
-            guests: capacityFilter.value || room.capacity
+            checkOutDate: selectedCheckOut
         };
 
-        // Step 1: Save selection in sessionStorage
-        sessionStorage.setItem("selectedBooking", JSON.stringify(selectedBooking));
-
-        // Step 2: Retrieve existing booking history
-        let bookingHistory = JSON.parse(localStorage.getItem("bookingHistory")) || [];
-
-        // Step 3: Add the new booking to history
-        bookingHistory.push(selectedBooking);
-
-        // Step 4: Save updated history to localStorage
-        localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
-
-        // Step 5: Redirect to booking page
+        localStorage.setItem("selectedBooking", JSON.stringify(selectedBooking));
         window.location.href = "booking.html";
     }
 
