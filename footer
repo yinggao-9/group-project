@@ -55,7 +55,7 @@
         <!-- social media section -->
         <!-- cut line 1-->
         <hr class="cutline d-none d-sm-block">
-        <div class="social-media d-flex justify-content-center d-none d-sm-flex">
+        <div class="social-media d-flex justify-content-center d-none d-md-flex">
                     <div class="media-wrapper">
                         <div class="media-btn">
                             <svg class="icon" aria-hidden="true"><use xlink:href="#icon-instgram"></use></svg>
