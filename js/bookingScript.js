@@ -1,4 +1,4 @@
-// REUSABLE VALIDATE FUNCTION
+// REUSABLE VALIDATE FUNCTION //
 
 function validateField(inputId, errorId) {  /* "validateField" is a function to validate the input information
                                                 "inputId, errorID", help to not repeat the same function for different fields*/
