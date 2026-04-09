@@ -24,10 +24,21 @@ document.addEventListener('DOMContentLoaded',()=>{
         minDate: "today",
         onChange: function(selectedDates, dateStr, instance){
             document.querySelector("#check-in .value").textContent = dateStr; 
+            // Update the minimum date for checkout calendar
+            if (checkoutPicker) {
+            checkoutPicker.set('minDate', dateStr);
+    
+        // If the selected checkout date is earlier than the checkin date, automatically adjust it to the checkin date
+        const currentCheckout = checkoutPicker.selectedDates[0];
+        if (currentCheckout && currentCheckout < new Date(dateStr)) {
+            checkoutPicker.setDate(dateStr);
+            document.querySelector("#check-out .value").textContent = dateStr;
+    }
+}
         }
     }); 
     //check out
-    flatpickr("#checkout-input",{
+    let checkoutPicker = flatpickr("#checkout-input",{
         dateFormat: "Y-m-d",
         defaultDate: tomorrowDate,
         minDate: "today",
@@ -162,11 +173,13 @@ closeBtn.addEventListener('click',() => {
 //the products data of best seller
 const rooms = [
     {
-        "id": 1,
+        "id": 10001,
         "title": "Standard Single Room",
         "image1": "img/roomtypes/1.jpg",
         "image2": "img/roomtypes/2.jpg",
         "image3": "img/roomtypes/3.jpg",
+        "price" : 200,
+        "available": true,
         "area": 18,
         "bed": "1 single",
         "adults": 1,
@@ -179,11 +192,13 @@ const rooms = [
         ]
     },
     {
-        "id": 2,
+        "id": 10002,
         "title": "Superior Single Room",
         "image1": "img/roomtypes/4.jpg",
         "image2": "img/roomtypes/5.jpg",
         "image3": "img/roomtypes/6.jpg",
+        "price" : 300,
+        "available": true,
         "area": 25,
         "bed": "1 single",
         "adults": 1,
@@ -196,11 +211,13 @@ const rooms = [
         ]
     },
     {
-        "id": 3,
+        "id": 10003,
         "title": "Superior Twin Room",
         "image1": "img/roomtypes/7.jpg",
         "image2": "img/roomtypes/8.jpg",
         "image3": "img/roomtypes/9.jpg",
+        "price" : 400,
+        "available": true,
         "area": 25,
         "bed": "2 twin",
         "adults": 2 ,
@@ -216,11 +233,13 @@ const rooms = [
         ]
     },
     {
-        "id": 4,
+        "id": 10004,
         "title": "Superior Double Room",
         "image1": "img/roomtypes/10.jpg",
         "image2": "img/roomtypes/11.jpg",
         "image3": "img/roomtypes/12.jpg",
+        "price" : 500,
+        "available": true,
         "area": 25,
         "bed": "1 king",
         "adults": 2 ,
@@ -236,11 +255,13 @@ const rooms = [
         ]
     },
     {
-    "id": 5,
+    "id": 10005,
     "title": "Deluxe Double Room",
     "image1": "img/roomtypes/13.jpg",
     "image2": "img/roomtypes/14.jpg",
     "image3": "img/roomtypes/15.jpg",
+    "price" : 600,
+    "available": true,
     "area": 30,
     "bed": "1 king",
     "adults": 2,
@@ -258,11 +279,13 @@ const rooms = [
     ]
   },
   {
-    "id": 6,
+    "id": 10006,
     "title": "Studio Twin Room",
     "image1": "img/roomtypes/16.jpg",
     "image2": "img/roomtypes/17.jpg",
     "image3": "img/roomtypes/18.jpg",
+    "price" : 700,
+    "available": true,
     "area": 38,
     "bed": "2 twin and 1 sofabed",
     "adults": 2,
@@ -281,11 +304,13 @@ const rooms = [
     ]
   },
   {
-    "id": 7,
+    "id": 10007,
     "title": "Studio Double Room",
     "image1": "img/roomtypes/19.jpg",
     "image2": "img/roomtypes/20.jpg",
     "image3": "img/roomtypes/21.jpg",
+    "price" : 800,
+    "available": true,
     "area": 36,
     "bed": "1 king and 1 sofabed",
     "adults": 2,
@@ -304,11 +329,13 @@ const rooms = [
     ]
   },
    {
-    "id": 8,
+    "id": 10008,
     "title": "1 Bedroom Suite",
     "image1": "img/roomtypes/22.jpg",
     "image2": "img/roomtypes/23.jpg",
     "image3": "img/roomtypes/24.jpg",
+    "price" : 900,
+    "available": true,
     "area": 55,
     "bed": "1 super king and 1 sofabed and 1 single",
     "adults": 3,
@@ -329,11 +356,13 @@ const rooms = [
     ]
   },
     {
-    "id": 9,
+    "id": 10009,
     "title": "2 Bedroom Suite",
     "image1": "img/roomtypes/25.jpg",
     "image2": "img/roomtypes/26.jpg",
     "image3": "img/roomtypes/27.jpg",
+    "price" : 1000,
+    "available": true,
     "area": 90,
     "bed": "1 super king and 2 single and 1 sofabed",
     "adults": 4,
@@ -353,11 +382,13 @@ const rooms = [
       "Wine selection"
     ]
   },{
-     "id": 10,
+     "id": 10010,
     "title": "Presidential Suite",
     "image1": "img/roomtypes/28.jpg",
     "image2": "img/roomtypes/29.jpg",
     "image3": "img/roomtypes/30.jpg",
+    "price" : 1200,
+    "available": true,
     "area": 140,
     "bed": "1 king and 2 single and 1 sofabed",
     "adults": 4,
@@ -441,11 +472,12 @@ document.querySelector('.products').innerHTML = rooms.map(room => {
                                 <span class="area">${room.area} m²</span>
                                 <span class="adults-number">${room.adults} adults</span>
                                 <span class="children-number" >${room.children} children(0-10)</span>
-                                <span class="bed-number">${room.bed}</span>
+                                <span class="bed-number">${room.bed}</span>  
                             </div>
+                            <div class="room-price bg-warning">€ ${room.price} / night</div>
                             <button class="more-info d-block mx-auto" data-bs-toggle="modal" data-bs-target="#exampleModal" data-room-id="${room.id}">More Info &rarr;</button>
                             
-                            <button class="btn btn-warning book-btn w-75 d-block mx-auto">Book Now</button>
+                            <button class="btn btn-warning book-btn w-75 d-block mx-auto" data-room-id="${room.id}">Book Now</button>
                         </div>
                     </li>
         `}).join('');
@@ -486,6 +518,10 @@ infoBtns.forEach(infoBtn =>{
     modalCard.style.display = 'block';
     const roomId = infoBtn.dataset.roomId
     const currentRoom = rooms.find(room=>room.id==roomId)
+    const bookBtn2 = document.querySelector(".book-btn2");
+        if (bookBtn2) {
+            bookBtn2.setAttribute("data-room-id", roomId);
+        }
         document.querySelector(".carousel-imgs").innerHTML =
          ` <div class="carousel-item active">
                 <img src="${currentRoom.image1}" class="card-img">
@@ -513,6 +549,7 @@ infoBtns.forEach(infoBtn =>{
             <span class="adults-number">${currentRoom.adults} adults</span>
             <span class="children-number">${currentRoom.children} children(0-10)</span>
             <span class="bed-number">${currentRoom.bed}</span>
+            <span class="rooms-price bg-warning">€ ${currentRoom.price} / night</span>
         </div>
         <p class="mb-3 description">${currentRoom.description}</p>
         <h5 class="mb-2">Main amenities</h5>
@@ -524,14 +561,140 @@ infoBtns.forEach(infoBtn =>{
        
     })
 
-
-//close modal card and overlay
+//close rooms modal card and overlay
 const closeBtn2 = document.querySelector(".room-card-header .close-btn2");
 closeBtn2.addEventListener('click',()=>{
     modalOverlay.style.display = 'none';
     modalCard.style.display = 'none';
 })
 
+
+//bind flatpickr with book button
+const confirmBtn = document.querySelector("#confirm-booking-btn");
+let bookingPicker = null;
+let selectedCheckin = null;
+let selectedCheckout = null;
+document.addEventListener('DOMContentLoaded', () => {
+   bookingPicker = flatpickr("#booking-dates", {
+    mode: "range",
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    inline: true,
+    onChange: function(selectedDates, dateStr, instance) {
+        const resultDiv = document.getElementById("date-result");
+        if (selectedDates.length === 2) {
+            selectedCheckin = instance.formatDate(selectedDates[0], "Y-m-d");
+            selectedCheckout = instance.formatDate(selectedDates[1], "Y-m-d");
+            
+            resultDiv.innerHTML = `
+                <div class="d-flex flex-wrap justify-content-center gap-1">
+                    <span><strong>check-in</strong>: ${selectedCheckin}</span>
+                    <span><strong>check-out</strong>: ${selectedCheckout}</span>
+                </div>
+            `;
+        checkAllConditions();
+        }
+    }
+});
+
+});
+
+const bookBtns = document.querySelectorAll(".book-btn, .book-btn2");
+const closeBtn3=document.querySelector(".close-btn3");
+const bookingModalOverlay = document.querySelector(".booking-modal-overlay");
+const bookingModalCard = document.querySelector(".booking-modal-card");
+let currentBookingRoom = null;
+//open booking modal card
+bookBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        bookingModalOverlay.style.display = "block"; 
+        bookingModalCard.style.display = "block";
+        document.querySelector("#booking-dates")._flatpickr.open();
+        const roomId = btn.dataset.roomId;
+        currentBookingRoom = rooms.find(room => room.id == roomId); 
+    });
+});
+//close booking modal card
+closeBtn3.addEventListener("click",(e)=>{
+    e.preventDefault();
+    bookingModalOverlay.style.display="none";
+    bookingModalCard.style.display = "none";
+    //clear date
+    if (bookingPicker) {
+        bookingPicker.clear();  
+    }
+    
+    // clear check-in/out text
+    const resultDiv = document.getElementById("date-result");
+    if (resultDiv) {
+        resultDiv.innerHTML = "";
+    }
+    if(errorMsgSpan){
+        errorMsgSpan.innerText="";
+    }
+     // Reset adults and children inputs to default values
+     if (adultsInput) {
+        adultsInput.value = "1";
+    }
+    if (childrenInput) {
+        childrenInput.value = "0";
+    }
+    
+});
+
+//check if the selected room is available
+const adultsInput = document.querySelector(".adults-input");
+const childrenInput = document.querySelector(".children-input");
+const errorMsgSpan = document.getElementById("err-msg");
+function checkCapacity() {
+    if (!currentBookingRoom) return;  // no room date will exit
+    
+    let adults = parseInt(adultsInput.value);
+    let children = parseInt(childrenInput.value);
+    
+    if (children > currentBookingRoom.children && adults > currentBookingRoom.adults) {
+        errorMsgSpan.innerHTML = `Over room capacity`;
+    } else if (children > currentBookingRoom.children) {
+        errorMsgSpan.innerHTML = `Max ${currentBookingRoom.children} children`;
+    } else if (adults > currentBookingRoom.adults) {
+        errorMsgSpan.innerHTML = `Max ${currentBookingRoom.adults} adults`;
+    } else {
+        errorMsgSpan.innerHTML = "";
+    }
+    checkAllConditions();
+}
+adultsInput.addEventListener("input", checkCapacity);
+childrenInput.addEventListener("input", checkCapacity);
+function checkAllConditions() {
+    confirmBtn.disabled = !(selectedCheckin && selectedCheckout && !errorMsgSpan.innerHTML);
+}
+//click BOOK btn
+const confirmBookBtn = document.getElementById("confirm-booking-btn");
+confirmBookBtn.addEventListener("click",()=>{
+     const currentUser = localStorage.getItem("currentUser")
+     if (!currentUser){
+        alert("Please login first to book a room");
+        window.location.href = "pages/login.html";
+        return;
+     }
+    const checkinDate = bookingPicker.formatDate(bookingPicker.selectedDates[0], "Y-m-d");
+    const checkoutDate = bookingPicker.formatDate(bookingPicker.selectedDates[1], "Y-m-d");
+    const adults = parseInt(adultsInput.value);
+    const children = parseInt(childrenInput.value);
+    const selectedBooking = {
+            roomId: currentBookingRoom.id,
+            roomName: currentBookingRoom.title,
+            roomDescription: currentBookingRoom.description,
+            roomPrice: currentBookingRoom.price,
+            roomImage: "../" + currentBookingRoom.image1,
+            checkInDate: checkinDate,
+            checkOutDate: checkoutDate,
+            guests: `${adults} adults, ${children} children`
+        };
+    sessionStorage.setItem('selectedBooking', JSON.stringify(selectedBooking));
+    window.location.href="pages/booking.html"
+})
 
 //review section
 //fake comment data

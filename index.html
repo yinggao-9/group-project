@@ -338,7 +338,7 @@
                                 <!-- text -->
                                 <div class="col-lg-4 text-col p-3 col-12">
                                     <div class="text-content"></div>
-                                    <button class="btn btn-warning mt-4 w-75 d-block mx-auto">Book Now</button>
+                                    <button class="btn book-btn2 btn-warning mt-4 w-75 d-block mx-auto">Book Now</button>
                                 </div>
                             </div>
                             </div>
@@ -346,9 +346,32 @@
                         </div>
                         </div>
                     </div>
-                 </div>
+                    
+                 <!-- booking date model -->
+                <div class="booking-modal-overlay">
+                    <div class="booking-modal-card">
+                        <div class="booking-modal-header">
+                            <button type="button" class="close-btn3 float-end"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-x1"></use></svg></button>
+                            <h4>Choose dates</h4>
+                        </div>
+                        <div class="booking-modal-body mt-3">
+                            <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                <div><label><strong>Adults</strong>: <input type="number" min="1" max="4" step="1" value="1" class="adults-input"></label></div>  
+                                <div><label><strong>Children</strong>: <input type="number" min="1" max="3" step="1" value="0" class="children-input"></label></div>
+                            </div>
+                            <div id="err-msg" class="text-danger text-center"></div>
+                            <div class="date-picker-wrapper">
+                                <div class="d-flex align-items-center justify-content-center"><input type="text" id="booking-dates"></div>
+                                <div id="date-result" class="mt-3 text-center"></div>
+                            </div>
+                            <!-- confirm booking btn -->
+                            <button class="btn btn-warning w-100 mt-2" id="confirm-booking-btn" disabled>BOOK</button>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
+    </div>
 
 
     <!-- end bestseller section -->
