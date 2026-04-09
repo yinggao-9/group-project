@@ -34,8 +34,7 @@
                     <h5 class="normal-title d-none d-md-block">Find Help</h5>
                     <ul class="collapse collapse-menu d-md-block" id="findHelp"> 
                         <li><a class="collapse-item" href="../index.html#FAQ">FAQ</a></li>
-                        <li><a class="collapse-item" href="../index.html#policy">Privacy Policy</a></li>
-                        <li><a class="collapse-item" href="../index.html#policy">Cookie Policy </a></li>
+                        <li><a class="collapse-item" href="#membership">Membership</a></li>
                     </ul>
                 </div>
                 <!-- Contact Us -->
