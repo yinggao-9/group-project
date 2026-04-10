@@ -96,18 +96,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ====== Booking History Dynamic Update ======
 
-const bookingTableBody = document.querySelector('#bookingHistoryTable tbody');
+// Select tbody from Booking History
+const bookingTableBody = document.querySelector('.table tbody');
 
 // Function to add a new booking row to the table
-function addBooking(booking, index) {
+function addBooking(booking) {
     const today = new Date();
     const checkInDate = new Date(booking.checkIn);
 
+    // Automatically determine status
     const status = checkInDate > today ? "Upcoming" : "Completed";
 
     const row = document.createElement('tr');
     row.innerHTML = `
-        <td>${index + 1}</td>
+        <td>${booking.id}</td>
         <td>${booking.room}</td>
         <td>${booking.checkIn}</td>
         <td>${booking.checkOut}</td>
@@ -116,28 +118,53 @@ function addBooking(booking, index) {
     bookingTableBody.appendChild(row);
 }
 
-// ---- Load existing booking history from localStorage ----
+// ---- Load booking history from localStorage ----
 let bookingHistory = JSON.parse(localStorage.getItem("bookingHistory")) || [];
 
-// ---- Display existing history ----
+// Clear table before rendering
+bookingTableBody.innerHTML = "";
+
+// Render existing bookings
 bookingHistory.forEach((booking, index) => {
-    addBooking(booking, index);
+    addBooking({
+        id: index + 1,
+        room: booking.roomName,
+        checkIn: booking.checkInDate,
+        checkOut: booking.checkOutDate
+    });
 });
 
-// ---- Get current booking from sessionStorage ----
+// ---- Add current selected booking if exists ----
 const selectedBooking = JSON.parse(sessionStorage.getItem("selectedBooking"));
 
 if (selectedBooking) {
 
     const newBooking = {
-        room: selectedBooking.roomName,
-        checkIn: selectedBooking.checkInDate,
-        checkOut: selectedBooking.checkOutDate
+        roomName: selectedBooking.roomName,
+        checkInDate: selectedBooking.checkInDate,
+        checkOutDate: selectedBooking.checkOutDate
     };
 
-    // Add only the new booking to table
-    addBooking(newBooking, bookingHistory.length -1);
+    // Avoid duplicates (optional but recommended)
+    const exists = bookingHistory.some(b =>
+        b.roomName === newBooking.roomName &&
+        b.checkInDate === newBooking.checkInDate &&
+        b.checkOutDate === newBooking.checkOutDate
+    );
 
-    // Optional: clear session so it doesn't duplicate on refresh
-    sessionStorage.removeItem("selectedBooking");
+    if (!exists) {
+    bookingHistory.push(newBooking);
+    localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
+
+    bookingTableBody.innerHTML = "";
+
+    bookingHistory.forEach((booking, index) => {
+        addBooking({
+            id: index + 1,
+            room: booking.roomName,
+            checkIn: booking.checkInDate,
+            checkOut: booking.checkOutDate
+        });
+    });
+}
 }
