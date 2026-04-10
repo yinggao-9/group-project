@@ -118,29 +118,53 @@ function addBooking(booking) {
     bookingTableBody.appendChild(row);
 }
 
-// ---- Clear table and localStorage history on load ----
-bookingTableBody.innerHTML = "";      // empty table
-localStorage.removeItem("bookingHistory"); // remove old bookings
+// ---- Load booking history from localStorage ----
+let bookingHistory = JSON.parse(localStorage.getItem("bookingHistory")) || [];
 
-// ---- Only add the current selected booking ----
+// Clear table before rendering
+bookingTableBody.innerHTML = "";
+
+// Render existing bookings
+bookingHistory.forEach((booking, index) => {
+    addBooking({
+        id: index + 1,
+        room: booking.roomName,
+        checkIn: booking.checkInDate,
+        checkOut: booking.checkOutDate
+    });
+});
+
+// ---- Add current selected booking if exists ----
 const selectedBooking = JSON.parse(sessionStorage.getItem("selectedBooking"));
-const bookingHistory = []; // start fresh
 
 if (selectedBooking) {
-    bookingHistory.push({
+
+    const newBooking = {
         roomName: selectedBooking.roomName,
         checkInDate: selectedBooking.checkInDate,
         checkOutDate: selectedBooking.checkOutDate
-    });
+    };
 
-    // Save to localStorage
+    // Avoid duplicates (optional but recommended)
+    const exists = bookingHistory.some(b =>
+        b.roomName === newBooking.roomName &&
+        b.checkInDate === newBooking.checkInDate &&
+        b.checkOutDate === newBooking.checkOutDate
+    );
+
+    if (!exists) {
+    bookingHistory.push(newBooking);
     localStorage.setItem("bookingHistory", JSON.stringify(bookingHistory));
 
-    // Add to table
-    addBooking({
-        id: 1,
-        room: selectedBooking.roomName,
-        checkIn: selectedBooking.checkInDate,
-        checkOut: selectedBooking.checkOutDate
+    bookingTableBody.innerHTML = "";
+
+    bookingHistory.forEach((booking, index) => {
+        addBooking({
+            id: index + 1,
+            room: booking.roomName,
+            checkIn: booking.checkInDate,
+            checkOut: booking.checkOutDate
+        });
     });
+}
 }
