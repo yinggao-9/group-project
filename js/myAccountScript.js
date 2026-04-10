@@ -136,7 +136,7 @@ if (selectedBooking) {
     };
 
     // Add only the new booking to table
-    addBooking(newBooking, bookingHistory.length);
+    addBooking(newBooking, bookingHistory.length -1);
 
     // Optional: clear session so it doesn't duplicate on refresh
     sessionStorage.removeItem("selectedBooking");
