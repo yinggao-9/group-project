@@ -390,23 +390,26 @@ document.addEventListener("DOMContentLoaded", () => {
      * The first date is check-in, the second date is check-out.
      */
     function setupDatePicker() {
-        if (typeof flatpickr !== "function") {
-            console.error("Flatpickr is not loaded.");
-            return;
-        }
+    stayPicker = flatpickr("#stayDates", {
+        mode: "range",
+        minDate: "today",
 
-        stayPicker = flatpickr(stayDates, {
-            mode: "range",
-            minDate: "today",
-            dateFormat: "Y-m-d",
-            altInput: true,
-            altFormat: "F j, Y",
-            disableMobile: true,
-            onChange() {
-                filterRooms();
-            }
-        });
-    }
+        dateFormat: "Y-m-d",
+        altInput: true,
+        altFormat: "F j, Y",
+
+        disableMobile: true,
+
+        /* make year dropdown scrollable */
+        monthSelectorType: "dropdown",
+        yearSelectorType: "dropdown",
+        showMonths: 1,
+
+        onChange: function () {
+            filterRooms();
+        }
+    });
+}
 
     /**
      * Filters rooms by search term, capacity, price, and selected date range.

@@ -216,7 +216,7 @@ img {
 
 .experience-text h2 {
     font-size: clamp(2rem, 4vw, 3rem);
-    color: #18352f;
+    color: #f0ca63;
     line-height: 1.2;
     margin-bottom: 18px;
 }
@@ -283,7 +283,7 @@ img {
 }
 
 .value-item h3 {
-    color: #18352f;
+    color: #f0ca63;
     margin-bottom: 10px;
     font-size: 1.18rem;
 }
@@ -355,19 +355,6 @@ img {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 28px rgba(212, 175, 55, 0.3);
-}
-
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.12);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.18);
 }
 
 /* =========================
