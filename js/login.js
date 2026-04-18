@@ -171,9 +171,8 @@ function resetUser(){
         const value = localStorage.getItem(key);
         const data = JSON.parse(value);
         console.log(data)
-        if (inputResetEmail.value === data.email){
+        if (data.email && data.password && data.username && inputResetEmail.value === data.email){
             user = data.username;
-            localStorage.removeItem(key);
             findEmail = true;
             break;
         }
@@ -190,7 +189,8 @@ function updateUser(username,email,password){
         email:email,
         password:password
     }
-    localStorage.setItem(`user_${email}`,JSON.stringify(newUser))
+    localStorage.setItem(`user_${email}`,JSON.stringify(newUser));
+    localStorage.setItem("currentUser", JSON.stringify({username: username}));
 }
 resetBtn.addEventListener('click',function(e){
     if(!inputResetEmail.checkValidity()){
